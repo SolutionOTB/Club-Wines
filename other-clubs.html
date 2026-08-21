@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Other Clubs | Club Wines</title>
+<meta name="description" content="One estate sparkling rosé, six clubs. The Book Club, The Racquet Club, The Mahjong Club, The Bowling Club, and The Hunting Club remain before the committee.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Other Clubs | Club Wines">
+<meta property="og:description" content="One estate sparkling rosé, six clubs. Five remain before the committee.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F7F3EB'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23A6894A' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='24.5' fill='none' stroke='%23A6894A' stroke-width='1'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%231B3022'%3ECW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js";</script>
+<style>
+:root{
+  --linen:#F7F3EB;
+  --obsidian:#1B3022;
+  --obsidian-hover:#0F1C13;
+  --rose:#E6B8B8;
+  --gold:#A6894A;
+  --gold-deep:#8F7238;
+  --gold-text:#7D6432;
+  --ink-soft:rgba(27,48,34,.72);
+  --ink-mute:rgba(27,48,34,.68);
+  --hairline:rgba(27,48,34,.22);
+  --hairline-soft:rgba(27,48,34,.13);
+  --serif:'Libre Bodoni', Georgia, serif;
+  --sans:'Source Sans 3', 'Gill Sans', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--linen);color:var(--obsidian);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E")}
+::selection{background:var(--rose);color:var(--obsidian)}
+html{scrollbar-color:rgba(27,48,34,.38) var(--linen)}
+a{text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+footer :focus-visible{outline-color:#C9A45A}
+.gilt{position:fixed;top:0;left:0;right:0;height:5px;z-index:40;
+  background:linear-gradient(90deg,#C99C9C,#E6B8B8 30%,#EEC6C4 50%,#E6B8B8 70%,#C99C9C);
+  box-shadow:0 1px 0 rgba(166,137,74,.55)}
+.shell{max-width:1100px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+.smallcaps{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.24em;font-size:12px}
+.rule{display:flex;align-items:center;border:0}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:var(--hairline)}
+.rule .dia{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin:0 14px;flex:none}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  #gate,#gate.closing{transition:none!important}
+}
+
+/* age gate */
+#gate{position:fixed;inset:0;z-index:60;background:var(--linen);display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity .5s ease}
+#gate.closing{opacity:0;pointer-events:none}
+#gate .inner{max-width:420px;padding:0 24px}
+#gate .medallion{width:92px;margin:0 auto 26px}
+#gate .wordmark{font-family:var(--serif);font-weight:700;font-size:30px;letter-spacing:.22em;text-indent:.22em;margin-bottom:22px}
+#gate .rule{width:180px;margin:0 auto 26px}
+#gate h2{font-family:var(--serif);font-weight:400;font-size:19px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+#gate p{color:var(--ink-soft);font-size:16px;margin-bottom:34px}
+#gate .enter{display:inline-block;background:var(--obsidian);color:var(--linen);font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:17px 42px;border:0;cursor:pointer;transition:background .25s ease}
+#gate .enter:hover{background:var(--obsidian-hover)}
+#gate .decline{display:block;margin:26px auto 0;color:var(--ink-mute);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--hairline);width:max-content;padding:14px 8px 14px}
+#gate .decline:hover{color:var(--obsidian);border-color:var(--gold)}
+
+/* top bar */
+.topbar{padding:30px 0 0}
+.topbar .shell{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar .mark{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--obsidian)}
+.topbar .mark svg{width:44px;height:44px}
+.topbar .mark span{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.22em;text-indent:.22em}
+.topbar .back{color:var(--gold-text);font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid transparent;padding:12px 2px;transition:border-color .25s ease}
+.topbar .back:hover{border-color:var(--gold)}
+
+/* head */
+.head{padding:clamp(48px,7vh,84px) 0 clamp(40px,6vh,64px)}
+.head h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,6.4vw,84px);line-height:1;letter-spacing:.015em;text-transform:uppercase;max-width:12ch}
+.head h1 em{color:var(--gold);font-style:italic;text-transform:none;font-weight:400;font-size:.9em}
+.head .lede{margin-top:clamp(22px,3.5vh,32px);font-size:clamp(17px,1.5vw,20px);color:var(--ink-soft);max-width:52ch}
+.head .lede strong{font-weight:600;color:var(--obsidian)}
+
+/* club rows */
+.club{padding:clamp(44px,7vh,72px) 0;border-top:1px solid var(--hairline-soft)}
+.club .shell{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(30px,5vw,72px);align-items:center}
+.club.flip .shell{grid-template-columns:minmax(0,7fr) minmax(0,4fr)}
+.club.flip .chipwrap{order:2}
+.chipwrap{display:flex;justify-content:center}
+.chip2{width:min(100%,300px);aspect-ratio:3/4;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:28px;background:var(--cbg)}
+.chip2::before{content:"";position:absolute;inset:10px;border:1px solid var(--cacc);opacity:.85;pointer-events:none}
+.chip2::after{content:"";position:absolute;inset:15px;border:1px solid var(--cacc);opacity:.4;pointer-events:none}
+.chip2 .cw{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.3em;text-indent:.3em;color:var(--cink);opacity:.85;text-transform:uppercase}
+.chip2 .disc{display:block;width:54%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--cacc)}
+.chip2 .disc img{display:block;width:100%;height:auto}
+.chip2 .cname{font-family:var(--serif);font-size:clamp(18px,2vw,22px);letter-spacing:.16em;text-indent:.16em;color:var(--cink);text-transform:uppercase;text-align:center}
+.chip2 .ctag{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--cink);opacity:.85}
+.club .body h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,40px);letter-spacing:.02em}
+.club .body h2 .cn{font-style:italic;color:var(--gold);margin-right:14px}
+.club .hero-line{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.9vw,24px);margin:10px 0 16px}
+.club .body p.copy{color:var(--ink-soft);max-width:52ch}
+.club .meta{margin-top:20px;display:flex;align-items:baseline;gap:22px}
+.club .wave{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);border:1px solid rgba(166,137,74,.45);padding:7px 14px}
+.club .occ{color:var(--ink-mute);font-size:14px;font-style:italic}
+
+/* accents per club */
+.book .hero-line{color:#5B2333}
+.racquet .hero-line{color:#2E5F35}
+.mahjong .hero-line{color:#B03A2E}
+.bowling .hero-line{color:#1B2A4A}
+.hunting .hero-line{color:#33402A}
+
+/* closing */
+.closing{background:var(--obsidian);color:var(--linen);text-align:center;padding:clamp(64px,9vh,100px) 24px;position:relative}
+.closing::before{content:"";position:absolute;inset:14px;border:1px solid rgba(247,243,235,.12);pointer-events:none}
+.closing .line{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);max-width:28ch;margin:0 auto 26px}
+.closing .btn{display:inline-block;background:var(--linen);color:var(--obsidian);font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:19px 46px;transition:background .25s ease}
+.closing .btn:hover{background:#EFE9DD}
+.closing .fine{margin-top:22px;color:rgba(247,243,235,.62);font-size:13px;font-style:italic}
+
+footer{background:var(--obsidian);color:rgba(247,243,235,.72);text-align:center;padding:34px 24px 44px;border-top:1px solid rgba(247,243,235,.1)}
+footer p{font-size:13px;letter-spacing:.04em}
+footer a{color:rgba(247,243,235,.82);display:inline-block;padding:14px 4px;min-height:44px}
+
+@media (max-width:820px){
+  .club .shell,.club.flip .shell{grid-template-columns:1fr}
+  .club.flip .chipwrap{order:0}
+  .chip{width:min(64vw,240px)}
+  .club .meta{flex-wrap:wrap;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="gilt" aria-hidden="true"></div>
+
+<div id="gate" role="dialog" aria-modal="true" aria-label="Age verification">
+  <div class="inner">
+    <svg class="medallion" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#A6894A" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="41.5" fill="none" stroke="#A6894A" stroke-width=".7"/>
+      <text x="50" y="63" text-anchor="middle" font-family="'Libre Bodoni',Georgia,serif" font-size="34" fill="#1B3022" letter-spacing="1">CW</text>
+    </svg>
+    <div class="wordmark">CLUB&nbsp;WINES</div>
+    <div class="rule" aria-hidden="true"><span class="dia"></span></div>
+    <h2>Members only.</h2>
+    <p>This is a wine club. You must be 21 or older to enter.</p>
+    <button class="enter" id="enterBtn">I am 21 or older</button>
+    <a class="decline" href="https://www.responsibility.org" rel="noopener">Not yet</a>
+  </div>
+</div>
+
+<main>
+
+<header class="topbar">
+  <div class="shell">
+    <a class="mark" href="index.html" aria-label="Club Wines home">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#A6894A" stroke-width="1.6"/>
+        <circle cx="50" cy="50" r="41.5" fill="none" stroke="#A6894A" stroke-width=".7"/>
+        <text x="50" y="63" text-anchor="middle" font-family="'Libre Bodoni',Georgia,serif" font-size="34" fill="#1B3022" letter-spacing="1">CW</text>
+      </svg>
+      <span>CLUB&nbsp;WINES</span>
+    </a>
+    <a class="back" href="index.html">Country Club Wines</a>
+  </div>
+</header>
+
+<section class="head">
+  <div class="shell">
+    <h1 class="reveal">The Other <em>clubs.</em></h1>
+    <p class="lede reveal" style="--d:.1s">One estate sparkling rosé. Six clubs. <strong>The Country Club opened first.</strong> These five remain before the committee, each with its own can, its own crest, and its own idea of a good evening.</p>
+  </div>
+</section>
+
+<!-- THE BOOK CLUB -->
+<section class="club book">
+  <div class="shell">
+    <div class="chipwrap reveal">
+      <div class="chip2" style="--cbg:#5B2333;--cacc:#D9A441;--cink:#F6EFE3">
+        <span class="cw">Club Wines</span>
+        <span class="disc"><img src="crest-book.png" alt="" width="240" height="240"></span>
+        <span class="cname">Book Club</span>
+        <span class="ctag">chapter one: rosé</span>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="reveal"><span class="cn">ii.</span>The Book Club</h2>
+      <p class="hero-line reveal">Required reading optional.</p>
+      <p class="copy reveal">The can as dust jacket, chapter one: rosé. A four pack shelves like a boxed set, and every back label carries a different chapter of the estate story.</p>
+      <div class="meta reveal">
+        <span class="wave">Launch wave</span>
+        <span class="occ">Book night, gifting between members, festival evenings.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE RACQUET CLUB -->
+<section class="club racquet flip">
+  <div class="shell">
+    <div class="chipwrap reveal">
+      <div class="chip2" style="--cbg:#2E5F35;--cacc:#D9A441;--cink:#F6EFE3">
+        <span class="cw">Club Wines</span>
+        <span class="disc"><img src="crest-racquet.png" alt="" width="242" height="242"></span>
+        <span class="cname">Racquet Club</span>
+        <span class="ctag">service included</span>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="reveal"><span class="cn">iii.</span>The Racquet Club</h2>
+      <p class="hero-line reveal">Service included.</p>
+      <p class="copy reveal">Varsity stripes in grass, clay, and hard court variants across the four pack. Glass is banned at every court in America, which is rather the point.</p>
+      <div class="meta reveal">
+        <span class="wave">Launch wave</span>
+        <span class="occ">Courtside coolers, round robins, pickleball leagues.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MAHJONG CLUB -->
+<section class="club mahjong">
+  <div class="shell">
+    <div class="chipwrap reveal">
+      <div class="chip2" style="--cbg:#225F52;--cacc:#D9A441;--cink:#F6EFE3">
+        <span class="cw">Club Wines</span>
+        <span class="disc"><img src="crest-mahjong.png" alt="" width="242" height="242"></span>
+        <span class="cname">Mahjong Club</span>
+        <span class="ctag">your seat is waiting</span>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="reveal"><span class="cn">iv.</span>The Mahjong Club</h2>
+      <p class="hero-line reveal">Your seat is waiting.</p>
+      <p class="copy reveal">The can stands like a tile. A four pack is a hand, the crowler is The Wall, and the tile glyph changes can to can.</p>
+      <div class="meta reveal">
+        <span class="wave">Wave two</span>
+        <span class="occ">Weekly tables, tournament nights, hostess gifting.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BOWLING CLUB -->
+<section class="club bowling flip">
+  <div class="shell">
+    <div class="chipwrap reveal">
+      <div class="chip2" style="--cbg:#1B2A4A;--cacc:#DD5A2F;--cink:#F6EFE3">
+        <span class="cw">Club Wines</span>
+        <span class="disc"><img src="crest-bowl.png" alt="" width="246" height="246"></span>
+        <span class="cname">Bowling Club</span>
+        <span class="ctag">league night, elevated</span>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="reveal"><span class="cn">v.</span>The Bowling Club</h2>
+      <p class="hero-line reveal">Split happens.</p>
+      <p class="copy reveal">League night, elevated: chain stitch script over athletic block, shirt piping for a border. Every can in the pack holds a league position, Anchor included.</p>
+      <div class="meta reveal">
+        <span class="wave">Wave two</span>
+        <span class="occ">League nights, boutique alleys, retro parties.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE HUNTING CLUB -->
+<section class="club hunting">
+  <div class="shell">
+    <div class="chipwrap reveal">
+      <div class="chip2" style="--cbg:#33402A;--cacc:#D9A441;--cink:#F6EFE3">
+        <span class="cw">Club Wines</span>
+        <span class="disc"><img src="crest-quail.png" alt="" width="246" height="246"></span>
+        <span class="cname">Hunting Club</span>
+        <span class="ctag">the lodge pour</span>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="reveal"><span class="cn">vi.</span>The Hunting Club</h2>
+      <p class="hero-line reveal">The lodge pour.</p>
+      <p class="copy reveal">Quail and pointer, engraved over topographic lines, with one blaze orange rule. The fall and winter identity, for the hardest person on the list.</p>
+      <div class="meta reveal">
+        <span class="wave">Wave two</span>
+        <span class="occ">Lodge dinners, sporting clays, holiday gifting.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <p class="line reveal">Members hear first when a new club opens its doors.</p>
+  <p class="reveal"><a class="btn" href="index.html#application">Apply for Membership</a></p>
+  <p class="fine reveal">One wine. The liquid never changes. Only the company does.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Grown, produced and canned by Element 79 Vineyards&nbsp;&nbsp;·&nbsp;&nbsp;Fairplay, California&nbsp;&nbsp;·&nbsp;&nbsp;<a href="index.html">Country Club Wines</a></p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var gate = document.getElementById('gate');
+  var cameFromSite = false;
+  try { cameFromSite = document.referrer && new URL(document.referrer).origin === location.origin; } catch(e){}
+  if (cameFromSite && gate){
+    gate.remove();
+  } else if (gate){
+    var enterBtn = document.getElementById('enterBtn');
+    document.body.style.overflow = 'hidden';
+    enterBtn.focus();
+    gate.addEventListener('keydown', function(ev){
+      if (ev.key !== 'Tab') return;
+      var focusables = gate.querySelectorAll('button, a[href]');
+      var first = focusables[0], last = focusables[focusables.length-1];
+      if (ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
+      else if (!ev.shiftKey && document.activeElement === last){ ev.preventDefault(); first.focus(); }
+    });
+    enterBtn.addEventListener('click', function(){
+      gate.classList.add('closing');
+      document.body.style.overflow = '';
+      setTimeout(function(){ gate.remove(); }, 520);
+    });
+  }
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+    var sweep = function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.reveal:not(.in)'), function(el){
+        if (el.getBoundingClientRect().top < window.innerHeight * 1.15) el.classList.add('in');
+      });
+    };
+    setTimeout(sweep, 1400);
+    window.addEventListener('scroll', sweep, {passive:true});
+    setTimeout(function(){
+      if (!document.querySelector('.reveal.in')) els.forEach(function(el){ el.classList.add('in'); });
+    }, 3000);
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>

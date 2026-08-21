@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Wines | Members Drink Better</title>
+<meta name="description" content="Estate grown sparkling rosé, canned for the pool deck, the course, and the courts. Founding membership is now open for application.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Country Club Wines | Members Drink Better">
+<meta property="og:description" content="Estate grown sparkling rosé, canned for the pool deck, the course, and the courts. Founding membership is now open for application.">
+<meta property="og:image" content="https://otbwine.com/sc-pool.jpg">
+<meta property="og:url" content="https://otbwine.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F7F3EB'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23A6894A' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='24.5' fill='none' stroke='%23A6894A' stroke-width='1'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%231B3022'%3ECW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js";</script>
+<noscript><style>#gate{display:none}</style></noscript>
+<style>
+:root{
+  --linen:#F7F3EB;
+  --linen-warm:#F4EBE1;
+  --rose-deep:#C98F8F;
+  --rose-ink:#A34D4D;
+  --obsidian:#1B3022;
+  --obsidian-deep:#142519;
+  --obsidian-hover:#0F1C13;
+  --rose:#E6B8B8;
+  --gold:#A6894A;
+  --gold-deep:#8F7238;
+  --gold-text:#7D6432;
+  --gold-on-dark:#C9A45A;
+  --ink-soft:rgba(27,48,34,.72);
+  --ink-mute:rgba(27,48,34,.68);
+  --hairline:rgba(27,48,34,.22);
+  --hairline-soft:rgba(27,48,34,.13);
+  --serif:'Libre Bodoni', Georgia, serif;
+  --sans:'Source Sans 3', 'Gill Sans', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--linen);
+  color:var(--obsidian);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:2;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
+}
+::selection{background:var(--rose);color:var(--obsidian)}
+html{scrollbar-color:rgba(27,48,34,.38) var(--linen)}
+input,select,textarea{caret-color:var(--gold)}
+a{text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+#hero-title:focus-visible{outline:none}
+.clubs :focus-visible,footer :focus-visible{outline-color:var(--gold-on-dark)}
+.gilt{position:fixed;top:0;left:0;right:0;height:5px;z-index:40;
+  background:linear-gradient(90deg,#C99C9C,#E6B8B8 30%,#EEC6C4 50%,#E6B8B8 70%,#C99C9C);
+  box-shadow:0 1px 0 rgba(166,137,74,.55)}
+.giltfill{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,#8F7238,#A6894A 45%,#C9A45A 70%,#EBD6A0);
+}
+
+/* ————— ornaments ————— */
+.rule{display:flex;align-items:center;gap:0;border:0}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:var(--hairline)}
+.rule .dia{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin:0 14px;flex:none}
+.rule.gold::before,.rule.gold::after{background:rgba(166,137,74,.55)}
+.rule.linen::before,.rule.linen::after{background:rgba(247,243,235,.28)}
+.rule.linen .dia{background:var(--rose)}
+
+.smallcaps{
+  font-family:var(--sans);font-weight:600;
+  text-transform:uppercase;letter-spacing:.24em;font-size:12px;
+}
+.article-no{
+  color:var(--gold-text);font-family:var(--sans);font-weight:600;
+  text-transform:uppercase;letter-spacing:.32em;font-size:12px;
+}
+
+/* ————— age gate ————— */
+#gate{
+  position:fixed;inset:0;z-index:60;background:var(--linen);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  transition:opacity .5s ease;
+}
+#gate.closing{opacity:0;pointer-events:none}
+#gate .inner{max-width:420px;padding:0 24px}
+#gate .medallion{width:92px;margin:0 auto 26px}
+#gate .wordmark{
+  font-family:var(--serif);font-weight:700;font-size:30px;
+  letter-spacing:.22em;text-indent:.22em;margin-bottom:22px;
+}
+#gate .rule{width:180px;margin:0 auto 26px}
+#gate h2{
+  font-family:var(--serif);font-weight:400;font-size:19px;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;
+}
+#gate p{color:var(--ink-soft);font-size:16px;margin-bottom:34px}
+#gate .enter{
+  display:inline-block;background:var(--obsidian);color:var(--linen);
+  font-family:var(--sans);font-weight:600;font-size:13px;
+  letter-spacing:.22em;text-transform:uppercase;
+  padding:17px 42px;border:0;cursor:pointer;
+  transition:background .25s ease;
+}
+#gate .enter:hover{background:var(--obsidian-hover)}
+#gate .decline{
+  display:block;margin:26px auto 0;color:var(--ink-mute);
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;border-bottom:1px solid var(--hairline);
+  width:max-content;padding:14px 8px 14px;
+}
+#gate .decline:hover{color:var(--obsidian);border-color:var(--gold)}
+
+/* ————— shared layout ————— */
+.shell{max-width:1160px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+section{position:relative}
+.article-head{
+  display:flex;align-items:baseline;gap:clamp(16px,2.5vw,28px);
+  text-align:left;margin-bottom:clamp(44px,6vw,64px);
+}
+.article-head .no{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(44px,6vw,72px);line-height:1;color:var(--gold-deep);opacity:.9;flex:none;
+}
+.article-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,3.6vw,42px);letter-spacing:.02em;
+}
+.article-head .tail{flex:1;height:1px;background:var(--hairline);align-self:center;min-width:32px}
+.article-head .lab{color:var(--gold-text);flex:none;align-self:center}
+@media (max-width:640px){.article-head .lab{display:none}}
+
+/* the ledgers rule themselves in, line by line */
+.declare li,.ops li,.venues .vrow{--i:0}
+.js .declare.in li,.js .ops.in li{
+  animation:ruleline .5s cubic-bezier(.16,1,.3,1) both;
+  animation-delay:calc(var(--i) * .07s);
+}
+@keyframes ruleline{
+  from{opacity:0;transform:translateX(-10px);border-top-color:transparent}
+  to{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .declare.in li,.js .ops.in li{animation:none}
+}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  #gate{transition:none}
+}
+
+/* ————— hero ————— */
+.hero{padding:clamp(48px,7vh,84px) 0 clamp(64px,9vh,110px)}
+.hero .shell{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(32px,5vw,72px);align-items:center;
+}
+.hero .eyebrow{color:var(--gold-text);margin-bottom:clamp(18px,2.5vh,26px)}
+.hero h1{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(52px,7.2vw,96px);
+  line-height:.98;letter-spacing:.015em;text-transform:uppercase;
+}
+.hero h1 .b{display:block}
+.hero h1 .accent{color:var(--gold);font-style:italic;text-transform:none;
+  font-weight:400;letter-spacing:0;font-size:.92em}
+.hero .rule{width:190px;margin:clamp(26px,4vh,38px) 0}
+.hero .sub{
+  font-size:clamp(17px,1.5vw,20px);color:var(--ink-soft);
+  max-width:44ch;margin-bottom:clamp(30px,4.5vh,44px);
+}
+.btn{
+  display:inline-block;background:var(--obsidian);color:var(--linen);
+  font-family:var(--sans);font-weight:600;font-size:13px;
+  letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  padding:19px 46px;border:1px solid var(--obsidian);cursor:pointer;
+  transition:background .25s ease;
+}
+.btn:hover{background:var(--obsidian-hover)}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2vw,26px)}
+.btn2{
+  display:inline-block;font-family:var(--sans);font-weight:600;font-size:13px;
+  letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  color:var(--obsidian);padding:19px 4px;border-bottom:1px solid var(--gold);
+  transition:border-color .25s ease,color .25s ease;
+}
+.btn2:hover{color:var(--gold-deep);border-color:var(--rose-ink)}
+.hero .note{
+  margin-top:16px;color:var(--ink-mute);font-size:14px;font-style:italic;
+}
+.hero .bannerwrap{display:flex;flex-direction:column;align-items:center}
+.brod{
+  width:min(100%,340px);height:1px;flex:none;
+  background:linear-gradient(90deg,transparent,var(--gold) 10%,var(--gold) 90%,transparent);
+}
+.banner{
+  position:relative;width:min(100%,300px);aspect-ratio:300/430;
+  transform-origin:50% 0;cursor:pointer;
+  background:none;border:0;padding:0;font:inherit;color:inherit;display:block;
+  filter:drop-shadow(0 14px 22px rgba(27,48,34,.18));
+}
+.bfield{position:absolute;inset:0;width:100%;height:100%;display:block}
+.bcontent{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  padding:11% 12% 25%;text-align:center;
+}
+.bmark{width:31%;height:auto;display:block;margin-bottom:6%}
+.brule{width:38%;height:1px;background:rgba(201,164,90,.55);display:block;margin-bottom:7%}
+.bkicker{
+  font-family:var(--sans);font-weight:600;font-size:clamp(8px,1.05vw,10px);
+  letter-spacing:.26em;text-indent:.26em;text-transform:uppercase;
+  color:var(--gold-on-dark);margin-bottom:6%;
+}
+.bname{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(17px,1.9vw,23px);line-height:1.26;letter-spacing:.02em;
+  color:var(--linen);transition:opacity .26s ease;
+  display:flex;align-items:center;justify-content:center;
+  min-height:2.52em;
+}
+.bdia{
+  width:7px;height:7px;background:var(--rose);transform:rotate(45deg);
+  display:block;margin:7% 0 auto;flex:none;
+}
+.bwordmark{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(10px,1.15vw,13px);letter-spacing:.34em;text-indent:.34em;
+  text-transform:uppercase;color:var(--gold-on-dark);
+}
+.bannerwrap .note{text-align:center;margin-top:24px;max-width:34ch}
+.banner:hover{filter:drop-shadow(0 18px 28px rgba(27,48,34,.24))}
+.banner:focus-visible{outline:2px solid var(--gold-deep);outline-offset:6px}
+
+/* the banner is hung, then settles */
+.bannerwrap.in .banner{animation:bhang 1.5s cubic-bezier(.22,1.1,.36,1) .15s both}
+.bannerwrap.in .brod{animation:brod .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes brod{from{opacity:0;transform:scaleX(.2)}to{opacity:1;transform:none}}
+@keyframes bhang{
+  0%{opacity:0;transform:translateY(-18px) rotate(0deg)}
+  35%{opacity:1;transform:translateY(0) rotate(1.4deg)}
+  62%{transform:rotate(-.85deg)}
+  82%{transform:rotate(.35deg)}
+  100%{transform:rotate(0deg)}
+}
+@media (prefers-reduced-motion:reduce){
+  .bannerwrap.in .banner,.bannerwrap.in .brod{animation:none}
+  .bname{transition:none}
+}
+
+/* ————— statement ————— */
+.statement{background:var(--obsidian);color:var(--linen);padding:clamp(84px,12vh,140px) 0;text-align:left;position:relative}
+.statement::before{content:"";position:absolute;inset:14px;border:1px solid rgba(247,243,235,.12);pointer-events:none}
+.sgrid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(36px,5vw,72px);align-items:center}
+.statement .big{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(30px,4.4vw,58px);line-height:1.16;letter-spacing:.005em;
+  max-width:17ch;margin:0 0 clamp(28px,4vh,38px);
+}
+.statement .big em{font-style:italic;color:var(--rose)}
+.statement .rule{width:210px;margin:0 0 clamp(24px,3.5vh,32px)}
+.statement .quiet{color:rgba(247,243,235,.72);max-width:44ch;margin:0;font-size:clamp(16px,1.4vw,18px)}
+.venuebox{display:flex;flex-direction:column}
+.venues{display:flex;flex-direction:column}
+.vrow{
+  display:flex;align-items:baseline;gap:14px;width:100%;
+  background:none;border:0;border-top:1px solid rgba(247,243,235,.16);
+  padding:15px 2px;cursor:pointer;text-align:left;font:inherit;
+  font-family:var(--serif);font-size:clamp(18px,1.9vw,24px);
+  letter-spacing:.04em;color:rgba(247,243,235,.6);
+  transition:color .3s ease,padding-left .3s cubic-bezier(.16,1,.3,1);
+}
+.vrow:last-of-type{border-bottom:1px solid rgba(247,243,235,.16)}
+.vrow .vn{color:var(--gold-on-dark);font-style:italic;font-size:.7em;flex:none;min-width:1.7em;opacity:.85;transition:opacity .3s ease}
+.vrow .vmark{
+  margin-left:auto;width:7px;height:7px;flex:none;align-self:center;
+  background:var(--rose);transform:rotate(45deg) scale(0);
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.vrow:hover{color:rgba(247,243,235,.92);padding-left:8px}
+.vrow.is-on{color:var(--linen);padding-left:8px}
+.vrow.is-on .vn{opacity:1}
+.vrow.is-on .vmark{transform:rotate(45deg) scale(1)}
+
+.vstage{position:relative;margin-top:clamp(22px,3.5vh,32px)}
+.vpanel{background:rgba(247,243,235,.05)}
+.vpanel{position:relative;margin:0}
+.vpanel[hidden]{display:none}
+.vpanel img{
+  display:block;width:100%;height:auto;
+  border:1px solid rgba(247,243,235,.22);padding:6px;
+  background:rgba(247,243,235,.06);
+  animation:vfade .55s cubic-bezier(.16,1,.3,1) both;
+}
+.vpanel figcaption{
+  margin-top:12px;color:rgba(247,243,235,.62);
+  font-family:var(--serif);font-style:italic;font-size:14.5px;
+  animation:vfade .55s cubic-bezier(.16,1,.3,1) .06s both;
+}
+@keyframes vfade{from{opacity:0;transform:translateY(10px) scale(.995)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .vpanel img,.vpanel figcaption{animation:none}
+  .vrow{transition:color .2s ease}
+  .vrow:hover,.vrow.is-on{padding-left:0}
+  .roll .yours a{transition:none}
+  .roll .yours a:hover{padding-left:2px}
+}
+
+/* ————— membership plaque ————— */
+.plaque{position:relative;border:1px solid var(--hairline);padding:clamp(36px,5vw,56px) clamp(24px,4vw,56px);max-width:1000px;margin:0 auto clamp(44px,6vh,60px)}
+.plaque::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,143,143,.42);pointer-events:none}
+
+/* ————— other clubs ————— */
+.others{padding:clamp(64px,9vh,100px) 0;border-top:1px solid var(--hairline-soft);text-align:center;background:var(--linen-warm)}
+.others .line{font-family:var(--serif);font-style:italic;font-size:clamp(18px,1.8vw,22px);color:var(--ink-soft);max-width:44ch;margin:0 auto 12px}
+.others .subline{color:var(--ink-mute);font-size:15px;font-style:italic}
+.others .rule{width:210px;margin:16px auto 26px}
+
+/* ————— footer nav ————— */
+footer nav{margin:0 0 22px}
+footer nav a{
+  display:inline-block;color:rgba(247,243,235,.82);font-family:var(--sans);font-weight:600;font-size:11.5px;
+  letter-spacing:.22em;text-transform:uppercase;text-decoration:none;margin:0 8px;
+  border-bottom:1px solid transparent;padding:13px 10px;transition:border-color .25s ease,color .25s ease;
+}
+footer nav a:hover{color:var(--linen);border-color:var(--gold)}
+
+/* ————— article I : the wine ————— */
+.wine{padding:clamp(70px,10vh,120px) 0}
+.spec{margin:clamp(44px,6vh,66px) 0 0}
+.spechead{display:flex;align-items:center;gap:20px;margin-bottom:clamp(20px,3vh,28px)}
+.spechead .smallcaps{color:var(--gold-text);flex:none}
+.spechead .tail{flex:1;height:1px;background:var(--hairline)}
+.specgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(316px,1fr));
+  gap:0 clamp(28px,4vw,60px);
+}
+.specgrid > div{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  border-top:1px solid var(--hairline-soft);padding:12px 2px;
+}
+.specgrid dt{
+  font-family:var(--sans);font-weight:600;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);flex:none;
+}
+.specgrid dd{
+  font-family:var(--serif);font-size:clamp(15px,1.4vw,17.5px);
+  color:var(--obsidian);text-align:right;text-wrap:balance;
+}
+.pairing{
+  margin-top:clamp(22px,3vh,30px);color:var(--ink-soft);
+  max-width:64ch;font-size:16px;
+}
+.pairing .smallcaps{color:var(--gold-text);margin-right:10px}
+.estate{margin:clamp(48px,7vh,76px) 0 0}
+.estate .frame{position:relative;border:1px solid var(--hairline);padding:10px;background:#EDE6D8}
+.estate img{aspect-ratio:1280/590;background:#EDE6D8}
+.estate .frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(166,137,74,.35);pointer-events:none;z-index:1}
+.estate img{display:block;width:100%;height:auto}
+.estate figcaption{margin-top:14px;text-align:center;color:var(--ink-mute);font-size:13px;font-style:italic}
+.wine .duo{
+  display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);
+  gap:clamp(36px,6vw,88px);align-items:center;
+}
+.wine .duo .body{text-align:left;margin:0;max-width:46ch}
+.wine .duo .declare{margin:0;max-width:none}
+.declare{list-style:none;max-width:720px;margin:0 auto clamp(36px,5vh,52px)}
+.declare li{
+  display:flex;justify-content:space-between;align-items:baseline;
+  border-top:1px solid var(--hairline-soft);padding:18px 4px;
+}
+.declare li:last-child{border-bottom:1px solid var(--hairline-soft)}
+.declare .n{color:var(--gold-text);font-family:var(--serif);font-style:italic;font-size:15px}
+.declare .d{
+  font-family:var(--sans);font-weight:600;text-transform:uppercase;
+  letter-spacing:.22em;font-size:14px;
+}
+.wine .body{max-width:58ch;margin:0 auto;text-align:center;color:var(--ink-soft);
+  font-size:clamp(17px,1.4vw,19px)}
+.wine .body em{font-family:var(--serif);color:var(--obsidian)}
+
+/* ————— article III : membership ————— */
+.member{padding:clamp(70px,10vh,120px) 0;border-top:1px solid var(--hairline-soft);text-align:center;background:var(--linen-warm)}
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(28px,4vw,56px);max-width:1000px;margin:0 auto clamp(44px,6vh,60px);
+  text-align:center;
+}
+.steps .num{
+  font-family:var(--serif);font-style:italic;font-size:30px;color:var(--gold-deep);
+  margin-bottom:12px;
+}
+.steps > div:last-child .num{color:var(--rose-ink)}
+.steps h3{
+  font-family:var(--serif);font-weight:400;font-size:21px;
+  letter-spacing:.03em;margin-bottom:10px;
+}
+.steps p{color:var(--ink-soft);font-size:16px;max-width:30ch;margin:0 auto}
+
+/* ————— article IV : for clubs ————— */
+.clubs{background:var(--obsidian);color:var(--linen);padding:clamp(80px,11vh,130px) 0;position:relative}
+.clubs::before{
+  content:"";position:absolute;inset:14px;border:1px solid rgba(247,243,235,.14);
+  pointer-events:none;
+}
+.clubs .shell{
+  display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);
+  gap:clamp(36px,5vw,72px);align-items:start;
+}
+.clubs .article-no{color:var(--rose)}
+.clubs .rule{width:190px;margin:16px 0 26px}
+.clubs h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(32px,3.8vw,46px);letter-spacing:.02em;margin-bottom:20px;
+}
+.clubs h2 .no{font-style:italic;color:var(--gold-on-dark);opacity:.75;margin-right:16px}
+.clubs h2 em{color:var(--rose)}
+.clubs p{color:rgba(247,243,235,.78);max-width:48ch;font-size:clamp(16px,1.4vw,18px)}
+.ops{list-style:none;margin:clamp(28px,4vh,38px) 0 clamp(30px,4vh,40px);max-width:52ch}
+.ops li{
+  display:grid;grid-template-columns:2.1em 1fr;column-gap:6px;
+  border-top:1px solid rgba(247,243,235,.16);padding:16px 2px;
+}
+.ops li:last-child{border-bottom:1px solid rgba(247,243,235,.16)}
+.ops .opn{grid-row:span 2;color:var(--gold-on-dark);font-family:var(--serif);font-style:italic;font-size:15px;padding-top:2px}
+.ops .opt{font-family:var(--serif);font-size:clamp(17px,1.6vw,20px);letter-spacing:.02em;color:var(--linen)}
+.ops .opd{color:rgba(247,243,235,.7);font-size:15px;margin-top:4px}
+.btn.ghost{
+  background:transparent;color:var(--linen);border:1px solid rgba(247,243,235,.5);
+  position:relative;overflow:hidden;
+}
+.btn.ghost:hover{background:var(--linen);color:var(--obsidian);border-color:var(--linen)}
+.roll .yours{padding:0}
+.roll .yours a{
+  display:flex;align-items:baseline;gap:14px;width:100%;min-height:44px;
+  padding:13px 2px;color:inherit;text-decoration:none;
+  transition:padding-left .3s cubic-bezier(.16,1,.3,1);
+}
+.roll .yours a:hover{padding-left:10px}
+.roll li{transition:color .25s ease}
+.roll li:not(.yours):hover{color:var(--linen)}
+.clubs .inq{
+  margin-top:18px;color:rgba(247,243,235,.6);
+  font-family:var(--serif);font-style:italic;font-size:14.5px;max-width:46ch;
+}
+
+.proof{display:flex;flex-direction:column;gap:clamp(26px,4vh,38px)}
+.canstage{margin:0}
+.canframe.ready .crestlayer{visibility:visible}
+.canplate{
+  position:relative;width:min(100%,340px);margin:0 auto;
+  padding:10px;background:#FDFBF4;
+  border:1px solid rgba(201,164,90,.55);
+  box-shadow:0 14px 22px rgba(0,0,0,.30);
+}
+.canplate::before{
+  content:"";position:absolute;inset:5px;border:1px solid rgba(201,164,90,.4);
+  pointer-events:none;z-index:2;
+}
+.canframe{position:relative;width:100%;margin:0}
+.canshot{display:block;width:100%;height:auto}
+.crestlayer{
+  position:absolute;left:50%;top:31.75%;width:21.32%;height:auto;
+  transform:translate(-50%,-50%);
+  visibility:hidden;
+  animation:crestland .62s cubic-bezier(.2,1.3,.4,1) both;
+}
+/* the crest is applied, not cross-faded — it drops into the well and settles */
+@keyframes crestland{
+  0%  {opacity:0;transform:translate(-50%,-172%) scale(1.5) rotate(-7deg)}
+  55% {opacity:1}
+  70% {transform:translate(-50%,-50%) scale(.965) rotate(.8deg)}
+  100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}
+}
+.canstage figcaption{
+  margin-top:18px;text-align:center;color:rgba(247,243,235,.66);
+  font-family:var(--serif);font-style:italic;font-size:14.5px;
+}
+.proofnote{
+  margin-top:-10px;text-align:center;color:rgba(247,243,235,.5);
+  font-family:var(--sans);font-size:12.5px;letter-spacing:.02em;max-width:38ch;
+  margin-left:auto;margin-right:auto;
+}
+.roll{width:100%}
+.roll-head{color:var(--gold-on-dark);margin-bottom:12px;text-align:center}
+.rollpick{display:flex;flex-direction:column}
+.prow{
+  display:flex;align-items:baseline;gap:14px;width:100%;
+  background:none;border:0;border-top:1px solid rgba(247,243,235,.16);
+  padding:13px 2px;min-height:44px;cursor:pointer;text-align:left;font:inherit;
+  font-family:var(--serif);font-size:clamp(15px,1.5vw,18px);letter-spacing:.03em;
+  color:rgba(247,243,235,.62);
+  transition:color .28s ease,padding-left .28s cubic-bezier(.16,1,.3,1);
+}
+.prow:last-child{border-bottom:1px solid rgba(247,243,235,.16)}
+.prow .rn{color:var(--gold-on-dark);font-style:italic;font-size:.72em;flex:none;min-width:1.9em;opacity:.85}
+.prow .status{
+  margin-left:auto;font-family:var(--sans);font-weight:600;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--rose);
+}
+.prow:hover{color:var(--linen);padding-left:8px}
+.prow.is-on{color:var(--linen);padding-left:8px}
+.prow.is-on .rn{color:var(--rose)}
+.prow.yours{color:rgba(247,243,235,.82)}
+@media (prefers-reduced-motion:reduce){
+  .crestlayer{animation:none}
+  .prow{transition:color .2s ease}
+  .prow:hover,.prow.is-on{padding-left:0}
+}
+.clubs .inq{
+  margin-top:18px;color:rgba(247,243,235,.6);
+  font-family:var(--serif);font-style:italic;font-size:14.5px;max-width:46ch;
+}
+
+.roll{max-width:400px;margin-left:auto;width:100%}
+.roll-head{color:var(--gold-on-dark);margin-bottom:14px}
+.roll ol{list-style:none}
+.roll li{
+  display:flex;align-items:baseline;gap:14px;
+  border-top:1px solid rgba(247,243,235,.16);padding:13px 2px;
+  font-family:var(--serif);font-size:clamp(16px,1.6vw,20px);
+  letter-spacing:.03em;color:rgba(247,243,235,.92);
+}
+.roll li:last-child{border-bottom:1px solid rgba(247,243,235,.16)}
+.roll .rn{color:var(--gold-on-dark);font-style:italic;font-size:.72em;flex:none;min-width:1.9em}
+.roll .status{
+  margin-left:auto;font-family:var(--sans);font-weight:600;font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,235,.62);
+}
+.roll .yours{color:var(--linen)}
+.roll .yours a:hover{color:var(--rose)}
+.roll .yours .status{color:var(--rose)}
+
+/* ————— article V : application ————— */
+.apply{padding:clamp(80px,11vh,130px) 0}
+.apply .paper{max-width:680px;margin:0 auto}
+.modeswitch{display:flex;gap:0;margin:clamp(24px,3.5vh,34px) auto 0;width:max-content;border:1px solid var(--hairline)}
+.modeswitch .mode{
+  font-family:var(--sans);font-weight:600;font-size:11.5px;letter-spacing:.22em;
+  text-transform:uppercase;background:transparent;color:var(--ink-mute);
+  border:0;padding:14px 26px;min-height:44px;cursor:pointer;
+  transition:background .25s ease,color .25s ease;
+}
+.modeswitch .mode + .mode{border-left:1px solid var(--hairline)}
+.modeswitch .mode:hover{color:var(--obsidian)}
+.modeswitch .mode.is-on{background:var(--obsidian);color:var(--linen)}
+.apply form{margin-top:clamp(30px,4vh,44px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:34px 44px}
+.field{display:flex;flex-direction:column}
+.field label{
+  font-family:var(--sans);font-weight:600;font-size:11px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);
+  margin-bottom:10px;
+}
+.field label .req{color:var(--rose-ink)}
+.field input,.field select{
+  font-family:var(--serif);font-size:18px;color:var(--obsidian);
+  background:transparent;border:0;border-bottom:1px solid var(--hairline);
+  border-radius:0;padding:10px 2px 12px;width:100%;
+  transition:border-color .25s ease;appearance:none;-webkit-appearance:none;
+}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' fill='none' stroke='%231B3022' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 4px center;
+  padding-right:24px;cursor:pointer;min-height:44px;
+}
+.field input:focus,.field select:focus{border-bottom-color:var(--gold);border-bottom-width:2px;padding-bottom:11px}
+.field input:focus:not(:focus-visible),.field select:focus:not(:focus-visible){outline:none}
+.field input::placeholder{color:var(--ink-mute);font-style:italic}
+.field .err{
+  color:#8C3B2E;font-size:13px;margin-top:8px;display:none;font-style:italic;
+}
+.field .hint{
+  color:var(--ink-mute);font-size:13px;margin-top:8px;font-style:italic;
+}
+.field.bad input,.field.bad select{border-bottom-color:#8C3B2E}
+.field.bad .err{display:block}
+.field.checkbox-field{flex-direction:row;align-items:flex-start;gap:12px}
+.field.checkbox-field label.checkbox{
+  display:flex;align-items:flex-start;gap:12px;cursor:pointer;
+  font-family:var(--serif);font-weight:400;font-size:15.5px;letter-spacing:normal;
+  text-transform:none;color:var(--obsidian);margin-bottom:0;
+}
+.field.checkbox-field input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;
+  border:1px solid var(--hairline);border-radius:2px;margin-top:3px;cursor:pointer;
+  position:relative;transition:border-color .2s ease,background .2s ease;
+}
+.field.checkbox-field input[type="checkbox"]:checked{background:var(--obsidian);border-color:var(--obsidian)}
+.field.checkbox-field input[type="checkbox"]:checked::after{
+  content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;
+  border:solid var(--linen);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.field.checkbox-field input[type="checkbox"]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.field.checkbox-field .err{margin-top:8px;margin-left:30px}
+.sponsor-toggle-row{margin-top:6px}
+.sponsor-fields{margin-top:30px;padding-top:30px;border-top:1px solid var(--hairline)}
+.sponsor-fields .sublabel{
+  font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-mute);margin-bottom:18px;grid-column:1/-1;
+}
+@media (max-width:640px){.fgrid{grid-template-columns:1fr}}
+.apply .actions{margin-top:clamp(36px,5vh,48px);text-align:center}
+.apply .btn{width:100%;padding:21px 46px}
+.apply .btn[disabled]{opacity:.55;cursor:wait}
+.apply .commitment{
+  margin-bottom:20px;color:var(--gold-deep);font-size:14px;font-style:italic;text-align:center;
+}
+.apply .commitment:empty{display:none;margin-bottom:0}
+.apply .privacy{
+  margin-top:20px;color:var(--ink-mute);font-size:14px;font-style:italic;text-align:center;
+}
+.apply .senderr{
+  display:none;margin-top:16px;text-align:center;color:#8C3B2E;font-style:italic;font-size:15px;
+}
+#done{display:none;text-align:center;padding:clamp(20px,4vh,40px) 0}
+#done .medallion{width:96px;margin:0 auto 26px}
+#done h3{color:var(--obsidian)}
+#done h3{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:.03em;margin-bottom:10px}
+#done p{color:var(--ink-soft)}
+
+/* ————— footer ————— */
+footer{background:var(--obsidian);color:rgba(247,243,235,.72);text-align:center;
+  padding:clamp(56px,8vh,80px) 24px}
+footer .wordmark{
+  font-family:var(--serif);font-weight:700;color:var(--linen);
+  font-size:22px;letter-spacing:.24em;text-indent:.24em;margin-bottom:20px;
+}
+footer .rule{width:170px;margin:0 auto 24px}
+footer p{font-size:13.5px;letter-spacing:.04em;margin-bottom:8px}
+footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
+
+
+/* ————— responsive ————— */
+@media (max-width:900px){
+  .hero .shell,.clubs .shell{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+  .hero .bannerwrap{margin-top:28px}
+  .banner{width:min(62vw,270px)}
+  .brod{width:min(66vw,290px)}
+  .hero .rule{margin-left:0}
+  .roll{margin:0;max-width:460px}
+  .sgrid{grid-template-columns:1fr;gap:40px}
+  .wine .duo{grid-template-columns:1fr;gap:40px}
+  .wine .duo .body{max-width:58ch}
+  .steps{grid-template-columns:1fr;gap:36px}
+  .fgrid{grid-template-columns:1fr;gap:30px}
+}
+</style>
+</head>
+<body>
+
+<div class="gilt" aria-hidden="true"></div>
+
+<!-- ————— AGE GATE ————— -->
+<div id="gate" role="dialog" aria-modal="true" aria-label="Age verification">
+  <div class="inner">
+    <svg class="medallion" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#A6894A" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="41.5" fill="none" stroke="#A6894A" stroke-width=".7"/>
+      <text x="50" y="63" text-anchor="middle" font-family="'Libre Bodoni',Georgia,serif" font-size="34" fill="#1B3022" letter-spacing="1">CW</text>
+    </svg>
+    <div class="wordmark">CLUB&nbsp;WINES</div>
+    <div class="rule" aria-hidden="true"><span class="dia"></span></div>
+    <h2>Members only.</h2>
+    <p>This is a wine club. You must be 21 or older to enter.</p>
+    <button class="enter" id="enterBtn">I am 21 or older</button>
+    <a class="decline" href="https://www.responsibility.org" target="_blank" rel="noopener noreferrer">Not yet</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ————— HERO ————— -->
+<section class="hero">
+  <div class="shell">
+    <div>
+      <h1 class="reveal" id="hero-title" tabindex="-1" style="--d:.08s">
+        <span class="b">Country</span>
+        <span class="b">Club</span>
+        <span class="b accent">wines.</span>
+      </h1>
+      <div class="rule reveal" style="--d:.16s" aria-hidden="true"><span class="dia"></span></div>
+      <p class="eyebrow smallcaps reveal" style="--d:.19s">Estate Sparkling Rosé&nbsp;&nbsp;·&nbsp;&nbsp;Canned for Clubs</p>
+      <p class="sub reveal" style="--d:.22s">Glass is banned at the pool, on the course, and on the courts. Club Wines is the estate sparkling rosé that goes there anyway, canned under your club's own crest, from the member guest tee gift to the pool bar.</p>
+      <div class="reveal" style="--d:.3s">
+        <div class="ctas">
+          <a class="btn" href="#for-clubs" data-mode="club">See Your Crest on the Can</a>
+          <a class="btn2" href="#application" data-mode="member">Apply as a Member</a>
+        </div>
+        <p class="note">The committee reviews applications monthly.</p>
+      </div>
+    </div>
+    <div class="bannerwrap reveal" style="--d:.14s">
+      <span class="brod" aria-hidden="true"></span>
+      <button type="button" class="banner" id="clubBanner"
+              aria-label="Club banner: canned exclusively for Oakhaven Country Club. Activate for the next club.">
+        <svg class="bfield" viewBox="0 0 300 430" aria-hidden="true">
+          <defs>
+            <linearGradient id="bgold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8F7238"/><stop offset=".32" stop-color="#C9A45A"/>
+              <stop offset=".58" stop-color="#EBD6A0"/><stop offset="1" stop-color="#8F7238"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 0 H300 V368 L150 430 L0 368 Z" fill="#1B3022"/>
+          <path d="M11 11 H289 V361 L150 418 L11 361 Z" fill="none" stroke="url(#bgold)" stroke-width="2"/>
+          <path d="M18 18 H282 V356 L150 410 L18 356 Z" fill="none" stroke="#A6894A" stroke-width=".8" opacity=".42"/>
+        </svg>
+        <div class="bcontent">
+          <img class="bmark" src="logo-cw-light.png" alt="" width="240" height="240" decoding="async">
+          <span class="brule" aria-hidden="true"></span>
+          <span class="bkicker">Canned exclusively for</span>
+          <span class="bname" id="cycleName">Oakhaven Country Club</span>
+          <span class="bdia" aria-hidden="true"></span>
+          <span class="bwordmark">Club Wines</span>
+        </div>
+      </button>
+      <p class="note">Six clubs that do not exist yet. Yours could.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ————— THE RULE ————— -->
+<section class="statement">
+  <div class="shell sgrid">
+    <div>
+      <h2 class="vh">Where the can goes</h2>
+      <p class="big reveal">Glass is banned at the pool, on the course, and on&nbsp;the&nbsp;courts.</p>
+      <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
+      <p class="quiet reveal">Which is exactly where a club pours its summer. The wine list stays in the clubhouse. The can goes everywhere it cannot.</p>
+    </div>
+
+    <div class="venuebox reveal">
+      <div class="venues" role="tablist" aria-label="Where the can goes">
+        <button class="vrow is-on" role="tab" id="vt-pool" aria-controls="vp-pool" aria-selected="true" type="button">
+          <span class="vn">i.</span><span class="vlabel">The pool</span><span class="vmark" aria-hidden="true"></span>
+        </button>
+        <button class="vrow" role="tab" id="vt-course" aria-controls="vp-course" aria-selected="false" tabindex="-1" type="button">
+          <span class="vn">ii.</span><span class="vlabel">The course</span><span class="vmark" aria-hidden="true"></span>
+        </button>
+        <button class="vrow" role="tab" id="vt-courts" aria-controls="vp-courts" aria-selected="false" tabindex="-1" type="button">
+          <span class="vn">iii.</span><span class="vlabel">The courts</span><span class="vmark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="vstage">
+        <figure class="vpanel is-on" role="tabpanel" id="vp-pool" tabindex="0" aria-labelledby="vt-pool">
+          <img src="sc-pool.jpg" alt="A Club Wines can beaded with condensation on the teak arm of a lounge chair beside a country club pool" width="1000" height="1000" fetchpriority="high" decoding="async">
+          <figcaption>Poolside service, where the glass ban is absolute.</figcaption>
+        </figure>
+        <figure class="vpanel" role="tabpanel" id="vp-course" tabindex="0" aria-labelledby="vt-course" hidden>
+          <img src="sc-course.jpg" alt="A Club Wines can in the cupholder of a golf cart looking out over the fairway" width="1000" height="1000" decoding="async">
+          <figcaption>Cart service on the turn, and the tee gift after.</figcaption>
+        </figure>
+        <figure class="vpanel" role="tabpanel" id="vp-courts" tabindex="0" aria-labelledby="vt-courts" hidden>
+          <img src="sc-courts.jpg" alt="A Club Wines can on a courtside bench with a wooden racquet and folded towel" width="1000" height="1000" decoding="async">
+          <figcaption>Round robins, socials, and every league night.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ————— ARTICLE I : THE WINE ————— -->
+<section class="wine">
+  <div class="shell">
+    <header class="article-head reveal">
+      <span class="no" aria-hidden="true">I.</span>
+      <h2>The wine</h2>
+      <span class="tail" aria-hidden="true"></span>
+      <span class="lab smallcaps">Article I</span>
+    </header>
+    <div class="duo">
+    <ul class="declare reveal" data-stagger>
+      <li><span class="d">Estate grown</span><span class="n">i.</span></li>
+      <li><span class="d">Hand farmed</span><span class="n">ii.</span></li>
+      <li><span class="d">No sugar added</span><span class="n">iii.</span></li>
+      <li><span class="d">Never sold in grocery stores</span><span class="n">iv.</span></li>
+    </ul>
+    <p class="body reveal">Our sparkling rosé comes off our family estate in Fairplay, California, farmed by hand and finished dry. It goes where bottles are not allowed: the pool, the courts, the course, the card table. <em>Watermelon, raspberry, and rose petal.</em></p>
+    </div>
+    <div class="spec reveal">
+      <div class="spechead">
+        <p class="smallcaps">The tech sheet</p>
+        <span class="tail" aria-hidden="true"></span>
+      </div>
+      <dl class="specgrid">
+        <div><dt>Format</dt><dd>12 oz can</dd></div>
+        <div><dt>Label</dt><dd>Fixed 46mm crest well, one TTB approval</dd></div>
+        <div><dt>Appellation</dt><dd>El Dorado&nbsp;/&nbsp;Fairplay</dd></div>
+        <div><dt>Vineyard</dt><dd>Element 79 Estate</dd></div>
+        <div><dt>Elevation</dt><dd>2,400 ft</dd></div>
+        <div><dt>Alcohol</dt><dd>12.0%</dd></div>
+        <div><dt>Winemaking</dt><dd>Whole cluster pressed, cold fermentation</dd></div>
+        <div><dt>Aging</dt><dd>100% stainless steel</dd></div>
+        <div><dt>pH</dt><dd>3.28</dd></div>
+        <div><dt>TA</dt><dd>6.7</dd></div>
+        <div><dt>Residual sugar</dt><dd>&lt;0.1&nbsp;g/L</dd></div>
+        <div><dt>Carbonation</dt><dd>3.2&nbsp;vol</dd></div>
+      </dl>
+      <p class="pairing"><span class="smallcaps">Pours with</span> fresh salads, sushi, soft cheeses, seafood, barbecue, fried chicken, spicy dishes, and fruit tarts.</p>
+    </div>
+
+    <figure class="estate reveal">
+      <div class="frame">
+        <img src="e79-vineyard.jpg" alt="Vine rows beside the tasting deck at Element 79 Vineyards in Fairplay, California" loading="lazy" decoding="async" width="1280" height="590">
+      </div>
+      <figcaption>The estate&nbsp;&nbsp;&#183;&nbsp;&nbsp;Element 79 Vineyards, Fairplay, California</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+
+<!-- ————— ARTICLE II : FOR CLUBS ————— -->
+<section class="clubs" id="for-clubs">
+  <div class="shell">
+    <div>
+      <h2 class="reveal"><span class="no" aria-hidden="true">II.</span>Your crest. <em>Our rosé.</em></h2>
+      <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
+      <p class="reveal">For the food and beverage director who has to serve wine where glass is not allowed. The same estate rosé, canned exclusively for your club, with your crest on the front.</p>
+      <ol class="ops reveal" data-stagger>
+        <li><span class="opn">i.</span><span class="opt">Pours where bottles cannot go.</span><span class="opd">Pool deck, halfway house, cart service, courts. No glass, no stemware, no barback.</span></li>
+        <li><span class="opn">ii.</span><span class="opt">Your crest is the label.</span><span class="opd">Member guest, tee gifts, tournament tables, the pro shop cooler. It reads as club merchandise, not vendor stock.</span></li>
+        <li><span class="opn">iii.</span><span class="opt">Nothing goes down the drain.</span><span class="opd">Single serve, shelf stable, no cellar space and no half bottles written off at close.</span></li>
+        <li><span class="opn">iv.</span><span class="opt">One wine, one SKU, one invoice.</span><span class="opd">Estate grown and canned in California. Case counts and lead times sent with the kit.</span></li>
+      </ol>
+      <a class="btn ghost reveal" href="#application" data-mode="club">Request the club kit</a>
+      <p class="inq reveal">Crest mockup, case counts, and lead times.</p>
+    </div>
+    <div class="proof reveal">
+      <figure class="canstage">
+        <div class="canplate"><div class="canframe">
+          <img class="canshot" src="can-blank.jpg" alt="A Club Wines can with an empty crest medallion, ready for a club mark" width="620" height="793" decoding="async">
+          <img class="crestlayer" id="crestLayer" src="disc-oak.webp" alt="" role="presentation" width="220" height="220" decoding="async">
+        </div></div>
+        <figcaption id="proofCap" aria-live="polite">Oakhaven Country Club&nbsp;&nbsp;&#183;&nbsp;&nbsp;a club that does not exist yet</figcaption>
+      </figure>
+      <p class="proofnote">One approved label. Your crest drops into the well. No new federal approval, no new artwork cycle.</p>
+
+      <div class="roll" role="group" aria-label="Preview a crest on the can">
+        <p class="roll-head smallcaps" id="roll-head">Put a crest on the can</p>
+        <div class="rollpick">
+          <button type="button" class="prow is-on" data-crest="oak"     data-cap="Oakhaven Country Club"     aria-pressed="true"><span class="rn">i.</span>Oakhaven Country Club</button>
+          <button type="button" class="prow" data-crest="willow"  data-cap="Willow Creek Golf Club"    aria-pressed="false"><span class="rn">ii.</span>Willow Creek Golf Club</button>
+          <button type="button" class="prow" data-crest="racquet" data-cap="Stone Ridge Racquet Club"  aria-pressed="false"><span class="rn">iii.</span>Stone Ridge Racquet Club</button>
+          <button type="button" class="prow" data-crest="book"    data-cap="The Foxglove Book Society" aria-pressed="false"><span class="rn">iv.</span>The Foxglove Book Society</button>
+          <button type="button" class="prow" data-crest="mahjong" data-cap="The Jade Table Club"       aria-pressed="false"><span class="rn">v.</span>The Jade Table Club</button>
+          <button type="button" class="prow" data-crest="quail"   data-cap="Lakeside Hunt Club"        aria-pressed="false"><span class="rn">vi.</span>Lakeside Hunt Club</button>
+          <button type="button" class="prow yours" data-crest="yours" data-cap="Your club" aria-pressed="false"><span class="rn">vii.</span>Your club<span class="status">open</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ————— ARTICLE III : MEMBERSHIP ————— -->
+<section class="member">
+  <div class="shell">
+    <header class="article-head reveal">
+      <span class="no" aria-hidden="true">III.</span>
+      <h2>How membership works</h2>
+      <span class="tail" aria-hidden="true"></span>
+      <span class="lab smallcaps">Article III</span>
+    </header>
+    <div class="plaque reveal">
+    <div class="steps">
+      <div class="reveal">
+        <div class="num">1.</div>
+        <h3>Apply</h3>
+        <p>Tell us who you are and which club is yours. The committee reviews monthly.</p>
+      </div>
+      <div class="reveal">
+        <div class="num">2.</div>
+        <h3>Get the first cans</h3>
+        <p>The debut run goes to founding members before it goes anywhere else.</p>
+      </div>
+      <div class="reveal">
+        <div class="num">3.</div>
+        <h3>Remain in good standing</h3>
+        <p>Members hear first, pour first, and are never asked to drink grocery store wine.</p>
+      </div>
+    </div>
+    </div>
+    <a class="btn reveal" href="#application" data-mode="member">Apply for Membership</a>
+  </div>
+</section>
+
+<!-- ————— THE OTHER CLUBS ————— -->
+<section class="others" id="other-clubs">
+  <div class="shell">
+    <p class="article-no reveal">The Other Clubs</p>
+    <div class="rule reveal" aria-hidden="true"><span class="dia"></span></div>
+    <p class="line reveal">The Book Club, The Racquet Club, The Mahjong Club, The Bowling Club, and The Hunting Club remain before the committee.</p>
+    <p class="subline reveal">Members hear first when a new club opens its doors.</p>
+    <p class="reveal" style="margin-top:26px"><a class="btn" href="other-clubs.html">Meet the Other Clubs</a></p>
+  </div>
+</section>
+
+<!-- ————— ARTICLE IV : APPLICATION ————— -->
+<section class="apply" id="application">
+  <div class="shell">
+    <div class="paper">
+      <header class="article-head reveal">
+      <span class="no" aria-hidden="true">IV.</span>
+      <h2 id="apply-title">Application for Membership</h2>
+      <span class="tail" aria-hidden="true"></span>
+      <span class="lab smallcaps">Article IV</span>
+    </header>
+      <div class="modeswitch reveal" role="radiogroup" aria-label="Who is applying">
+        <button type="button" class="mode is-on" id="mode-member" role="radio" aria-checked="true">A member</button>
+        <button type="button" class="mode" id="mode-club" role="radio" aria-checked="false" tabindex="-1">A club</button>
+      </div>
+      <form id="appForm" novalidate class="reveal" aria-label="Application for Membership">
+        <div class="fgrid">
+          <div class="field" id="f-name">
+            <label for="first_name">First name <span class="req">*</span></label>
+            <input type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Your given name" required aria-required="true" aria-describedby="err-name" maxlength="80">
+            <span class="err" id="err-name">The committee will need your name.</span>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required aria-required="true" aria-describedby="err-email">
+            <span class="err" id="err-email">A working email, please.</span>
+          </div>
+          <div class="field" id="f-state">
+            <label for="state">State <span class="req">*</span></label>
+            <select id="state" name="state" required aria-required="true" aria-describedby="err-state state-hint">
+              <option value="" selected>Select your state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+            </select>
+            <span class="err" id="err-state">Shipping wine requires your state.</span>
+            <span class="hint" id="state-hint">We ship direct from the winery to a limited number of states. If we can't reach yours yet, we'll say so plainly rather than leave you waiting.</span>
+          </div>
+          <div class="field" id="f-club" data-club-mode-only hidden>
+            <label for="clubname" id="club-label">Your club <span class="req">*</span></label>
+            <input type="text" id="clubname" name="clubname" placeholder="Club name and your title" autocomplete="organization" aria-describedby="err-clubname" maxlength="120">
+            <span class="err" id="err-clubname">The committee will need the club name.</span>
+          </div>
+        </div>
+        <div class="field checkbox-field sponsor-toggle-row" id="f-sponsor-toggle" data-member-mode-only>
+          <label class="checkbox">
+            <input type="checkbox" id="sponsor_toggle" name="sponsor_toggle">
+            <span>I'd like to sponsor my club</span>
+          </label>
+        </div>
+        <div class="fgrid sponsor-fields" id="sponsor-fields" data-member-mode-only hidden>
+          <p class="sublabel">Tell us who to contact</p>
+          <div class="field" id="f-sponsor-club">
+            <label for="sponsor_club">Club name <span class="req">*</span></label>
+            <input type="text" id="sponsor_club" name="sponsor_club" placeholder="e.g. Serrano Country Club" autocomplete="organization" aria-describedby="err-sponsor-club" maxlength="120">
+            <span class="err" id="err-sponsor-club">The committee will need the club's name.</span>
+          </div>
+          <div class="field" id="f-contact-name">
+            <label for="contact_name">Who should we contact? <span class="req">*</span></label>
+            <input type="text" id="contact_name" name="contact_name" placeholder="Name and title, e.g. Jane Doe, GM" aria-describedby="err-contact-name" maxlength="120">
+            <span class="err" id="err-contact-name">We need a name to reach out to.</span>
+          </div>
+          <div class="field" id="f-contact-email">
+            <label for="contact_email">Their email <span class="req">*</span></label>
+            <input type="email" id="contact_email" name="contact_email" placeholder="name@club.com" autocomplete="email" aria-describedby="err-contact-email">
+            <span class="err" id="err-contact-email">A working email for your contact, please.</span>
+          </div>
+          <div class="field checkbox-field" id="f-permission">
+            <label class="checkbox">
+              <input type="checkbox" id="permission" name="permission" aria-describedby="err-permission">
+              <span>I've spoken with them, and they're open to hearing from Club Wines.</span>
+            </label>
+            <span class="err" id="err-permission">Please confirm before we reach out to your contact.</span>
+          </div>
+        </div>
+        <div class="actions">
+          <p class="commitment" id="commitment-note"></p>
+          <button type="submit" class="btn" id="submitBtn">Submit Application</button>
+          <p class="privacy" id="privacy-note">We ask your state because shipping wine is a state by state affair. No spam, nothing shared, resign anytime.</p>
+          <p class="senderr" id="senderr" role="alert">Something went wrong on our end. Try once more.</p>
+        </div>
+      </form>
+      <div id="done" tabindex="-1">
+        <svg class="medallion" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#A6894A" stroke-width="1.6"/>
+          <circle cx="50" cy="50" r="41.5" fill="none" stroke="#A6894A" stroke-width=".7"/>
+          <text x="50" y="63" text-anchor="middle" font-family="'Libre Bodoni',Georgia,serif" font-size="34" fill="#1B3022" letter-spacing="1">CW</text>
+        </svg>
+        <h3>Application received.</h3>
+        <p>The committee will be in touch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ————— FOOTER ————— -->
+<footer>
+  <div class="wordmark">CLUB&nbsp;WINES</div>
+  <div class="rule linen" aria-hidden="true"><span class="dia"></span></div>
+  <nav aria-label="Footer">
+    <a href="#application" data-mode="member">Application</a>
+    <a href="#for-clubs">For Clubs</a>
+    <a href="other-clubs.html">The Other Clubs</a>
+  </nav>
+  <p>Grown, produced and canned by Element 79 Vineyards&nbsp;&nbsp;·&nbsp;&nbsp;Fairplay, California</p>
+  <p>You must be 21 or older. Please enjoy responsibly.</p>
+  <p class="fine">&copy; 2026 Club Wines. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var ENDPOINT = 'https://pytbtuzeeguqgrhszmpr.supabase.co/rest/v1/club_wines_waitlist';
+  var APIKEY = 'sb_publishable_Szeto_ZZUnpZipwMv1VE0A_wyo3RMQp';
+
+  /* age gate — session variable only, no storage */
+  var gate = document.getElementById('gate');
+  var enterBtn = document.getElementById('enterBtn');
+  var cameFromSite = false;
+  try { cameFromSite = document.referrer && new URL(document.referrer).origin === location.origin; } catch(e){}
+  if (cameFromSite){ gate.remove(); gate = null; }
+  if (gate){
+  document.body.style.overflow = 'hidden';
+  enterBtn.focus();
+  gate.addEventListener('keydown', function(ev){
+    if (ev.key !== 'Tab') return;
+    var focusables = gate.querySelectorAll('button, a[href]');
+    var first = focusables[0], last = focusables[focusables.length-1];
+    if (ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && document.activeElement === last){ ev.preventDefault(); first.focus(); }
+  });
+  enterBtn.addEventListener('click', function(){
+    gate.classList.add('closing');
+    document.body.style.overflow = '';
+    var heroTitle = document.getElementById('hero-title');
+    if (heroTitle) heroTitle.focus();
+    setTimeout(function(){ gate.remove(); }, 520);
+  });
+  }
+
+  /* states — the <select> already carries the full option list in markup so a
+     blocked or failed script never leaves an unsubmittable form; nothing to
+     populate here. */
+  var stateSel = document.getElementById('state');
+
+  /* reveal on entry */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-stagger]'), function(list){
+    Array.prototype.forEach.call(list.children, function(li, i){ li.style.setProperty('--i', i); });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+    /* safety net: if the observer never fires (background tab, throttling, an
+       extension), nothing on this page may stay invisible. */
+    var sweep = function(){
+      var any = false;
+      Array.prototype.forEach.call(document.querySelectorAll('.reveal:not(.in)'), function(el){
+        if (el.getBoundingClientRect().top < window.innerHeight * 1.15){ el.classList.add('in'); any = true; }
+      });
+      return any;
+    };
+    setTimeout(sweep, 1400);
+    window.addEventListener('scroll', sweep, {passive:true});
+    window.addEventListener('resize', sweep, {passive:true});
+    setTimeout(function(){
+      if (!document.querySelector('.reveal.in')){
+        els.forEach(function(el){ el.classList.add('in'); });
+      }
+    }, 3000);
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* member or club mode */
+  var modeMember = document.getElementById('mode-member');
+  var modeClub = document.getElementById('mode-club');
+  var clubName = document.getElementById('clubname');
+  var clubModeEls = document.querySelectorAll('[data-club-mode-only]');
+  var memberModeEls = document.querySelectorAll('[data-member-mode-only]');
+  var sponsorToggle = document.getElementById('sponsor_toggle');
+  var sponsorFields = document.getElementById('sponsor-fields');
+  var applyMode = 'member';
+  function updateCommitmentNote(){
+    var cn = document.getElementById('commitment-note');
+    if (!cn) return;
+    var isClub = applyMode === 'club';
+    var sponsorOn = !isClub && !!(sponsorToggle && sponsorToggle.checked);
+    cn.textContent = isClub
+      ? 'Crest mockup, case counts, and lead times — back to you within two business days.'
+      : sponsorOn
+        ? 'We will reach out to your contact directly and let them know you made the introduction.'
+        : '';
+  }
+  function setMode(m){
+    applyMode = m;
+    var isClub = m === 'club';
+    modeClub.classList.toggle('is-on', isClub);
+    modeMember.classList.toggle('is-on', !isClub);
+    modeClub.setAttribute('aria-checked', isClub ? 'true' : 'false');
+    modeMember.setAttribute('aria-checked', isClub ? 'false' : 'true');
+    modeClub.tabIndex = isClub ? 0 : -1;
+    modeMember.tabIndex = isClub ? -1 : 0;
+    Array.prototype.forEach.call(clubModeEls, function(el){ el.hidden = !isClub; });
+    Array.prototype.forEach.call(memberModeEls, function(el){ el.hidden = isClub; });
+    document.getElementById('f-club').classList.remove('bad');
+    if (isClub && sponsorToggle){
+      sponsorToggle.checked = false;
+      if (sponsorFields) sponsorFields.hidden = true;
+    }
+    if (btn) btn.textContent = isClub ? 'Request the Club Kit' : 'Submit Application';
+    var at = document.getElementById('apply-title');
+    if (at) at.textContent = isClub ? 'Request the Club Kit' : 'Application for Membership';
+    var pn = document.getElementById('privacy-note');
+    if (pn) pn.textContent = isClub
+      ? 'We ask your state because wine licensing is a state by state affair. No spam, nothing shared.'
+      : 'We ask your state because shipping wine is a state by state affair. No spam, nothing shared, resign anytime.';
+    updateCommitmentNote();
+  }
+  if (sponsorToggle){
+    sponsorToggle.addEventListener('change', function(){
+      sponsorFields.hidden = !sponsorToggle.checked;
+      if (!sponsorToggle.checked){
+        ['f-sponsor-club','f-contact-name','f-contact-email','f-permission'].forEach(function(id){
+          document.getElementById(id).classList.remove('bad');
+        });
+      }
+      updateCommitmentNote();
+    });
+  }
+  if (modeMember && modeClub){
+    modeMember.addEventListener('click', function(){ setMode('member'); });
+    modeClub.addEventListener('click', function(){ setMode('club'); });
+    [modeMember, modeClub].forEach(function(el, i, arr){
+      el.addEventListener('keydown', function(ev){
+        if (['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].indexOf(ev.key) === -1) return;
+        ev.preventDefault();
+        var next = arr[(i + 1) % 2];
+        setMode(next === modeClub ? 'club' : 'member');
+        next.focus();
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-mode]'), function(a){
+      a.addEventListener('click', function(){ setMode(a.getAttribute('data-mode')); });
+    });
+  }
+
+  /* form */
+  var form = document.getElementById('appForm');
+  var btn = document.getElementById('submitBtn');
+  var senderr = document.getElementById('senderr');
+  var senderrOffline = 'You appear to be offline. Check your connection and try once more.';
+  var senderrGeneric = 'Something went wrong on our end. Try once more.';
+  function bad(id, isBad){
+    var f = document.getElementById(id);
+    f.classList.toggle('bad', isBad);
+    var ctrl = f.querySelector('input:not([hidden]),select:not([hidden])');
+    if (ctrl) ctrl.setAttribute('aria-invalid', isBad ? 'true' : 'false');
+    return isBad;
+  }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    senderr.style.display = 'none';
+    var name = document.getElementById('first_name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var state = stateSel.value;
+    var isClub = applyMode === 'club';
+    var club = isClub ? clubName.value.trim() : null;
+    var sponsorOn = !isClub && !!(sponsorToggle && sponsorToggle.checked);
+    var sponsorClub = sponsorOn ? document.getElementById('sponsor_club').value.trim() : null;
+    var contactName = sponsorOn ? document.getElementById('contact_name').value.trim() : null;
+    var contactEmail = sponsorOn ? document.getElementById('contact_email').value.trim() : null;
+    var permissionGiven = sponsorOn ? document.getElementById('permission').checked : null;
+    var invalid = false;
+    invalid = bad('f-name', !name) || invalid;
+    invalid = bad('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || invalid;
+    invalid = bad('f-state', !state) || invalid;
+    if (isClub) invalid = bad('f-club', !club) || invalid;
+    if (sponsorOn){
+      invalid = bad('f-sponsor-club', !sponsorClub) || invalid;
+      invalid = bad('f-contact-name', !contactName) || invalid;
+      invalid = bad('f-contact-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) || invalid;
+      invalid = bad('f-permission', !permissionGiven) || invalid;
+    }
+    if (invalid){
+      var firstBad = form.querySelector('.field.bad input:not([hidden]), .field.bad select:not([hidden])');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.setAttribute('aria-busy','true');
+    var btnLabel = btn.textContent;
+    btn.textContent = isClub ? 'Sending your request' : 'Submitting your application';
+    var controller = ('AbortController' in window) ? new AbortController() : null;
+    var timedOut = false;
+    var timeoutId = controller ? setTimeout(function(){ timedOut = true; controller.abort(); }, 15000) : null;
+    fetch(ENDPOINT, {
+      method:'POST',
+      headers:{'apikey':APIKEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body: JSON.stringify({first_name:name, email:email, state:state, club:club,
+        sponsor_club: sponsorClub, contact_name: contactName, contact_email: contactEmail,
+        permission: permissionGiven,
+        source: isClub ? 'club-inquiry' : (sponsorOn ? 'member-sponsor' : 'website')}),
+      signal: controller ? controller.signal : undefined
+    }).then(function(r){
+      if (timeoutId) clearTimeout(timeoutId);
+      if (r.status === 201 || r.status === 409){
+        var dupe = r.status === 409;
+        form.style.display = 'none';
+        var ms = document.querySelector('.modeswitch');
+        if (ms) ms.style.display = 'none';
+        var done = document.getElementById('done');
+        var dh = done.querySelector('h3'), dp = done.querySelector('p');
+        if (dupe){
+          dh.textContent = 'You are already on the roll.';
+          dp.textContent = isClub
+            ? 'That address is already with the committee. Nothing further is needed here — if your club name has changed, you are welcome to submit again.'
+            : 'That address is already with the committee. Nothing further is needed.';
+        } else if (isClub){
+          dh.textContent = 'Request received, ' + name + '.';
+          dp.textContent = 'The committee will be in touch within two business days, including honestly if we cannot yet ship to your state.';
+        } else if (sponsorOn){
+          dh.textContent = 'Application received, ' + name + '.';
+          dp.textContent = 'The committee will reach out to ' + contactName + ' at ' + sponsorClub + ' directly.';
+        } else {
+          dh.textContent = 'Application received, ' + name + '.';
+          dp.textContent = 'The committee reviews applications monthly. Watch your inbox.';
+        }
+        done.style.display = 'block';
+        done.focus();
+      } else {
+        senderr.textContent = senderrGeneric;
+        senderr.style.display = 'block';
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.textContent = btnLabel;
+      }
+    }).catch(function(){
+      if (timeoutId) clearTimeout(timeoutId);
+      senderr.textContent = (timedOut || ('onLine' in navigator && !navigator.onLine))
+        ? senderrOffline
+        : senderrGeneric;
+      senderr.style.display = 'block';
+      btn.disabled = false;
+      btn.removeAttribute('aria-busy');
+      btn.textContent = btnLabel;
+    });
+  });
+
+  /* venue selector: pick a place, its photograph appears beneath */
+  var vtabs = Array.prototype.slice.call(document.querySelectorAll('.vrow'));
+  var vpanels = Array.prototype.slice.call(document.querySelectorAll('.vpanel'));
+  var vAuto = null, vTouched = false, vIndex = 0, vSeen = false;
+  function showVenue(i, focus){
+    vIndex = i;
+    vtabs.forEach(function(t, n){
+      var on = n === i;
+      t.classList.toggle('is-on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      vpanels[n].hidden = !on;
+      if (on) vpanels[n].classList.add('is-on'); else vpanels[n].classList.remove('is-on');
+    });
+    if (focus) vtabs[i].focus();
+  }
+  function stopVAuto(){ if (vAuto){ clearInterval(vAuto); vAuto = null; } vTouched = true; }
+  vtabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ stopVAuto(); showVenue(i); });
+    t.addEventListener('keydown', function(ev){
+      var k = ev.key, n = null;
+      if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % vtabs.length;
+      else if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + vtabs.length) % vtabs.length;
+      else if (k === 'Home') n = 0;
+      else if (k === 'End') n = vtabs.length - 1;
+      if (n !== null){ ev.preventDefault(); stopVAuto(); showVenue(n, true); }
+    });
+  });
+  var vbox = document.querySelector('.venuebox');
+  if (vbox && vtabs.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      if (en[0].isIntersecting && !vSeen && !vTouched){
+        vSeen = true;
+        var vShown = 0;
+        vAuto = setInterval(function(){
+          showVenue((vIndex + 1) % vtabs.length);
+          if (++vShown >= vtabs.length * 2) stopVAuto();
+        }, 4200);
+      } else if (!en[0].isIntersecting && vAuto){
+        clearInterval(vAuto); vAuto = null; vSeen = false;
+      }
+    }, {threshold:.35}).observe(vbox);
+    vbox.addEventListener('mouseenter', stopVAuto);
+    vbox.addEventListener('focusin', stopVAuto);
+  }
+
+  /* gilt strip doubles as a reading progress bar */
+  var gilt = document.querySelector('.gilt');
+  if (gilt){
+    var fill = document.createElement('span');
+    fill.className = 'giltfill';
+    gilt.appendChild(fill);
+    var ticking = false;
+    function drawProgress(){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      fill.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking){ ticking = true; requestAnimationFrame(drawProgress); }
+    }, {passive:true});
+    drawProgress();
+  }
+
+  /* put a crest on the can — the roll drives the product shot */
+  var crestLayer = document.getElementById('crestLayer');
+  var canShot = document.querySelector('.canshot');
+  if (canShot){
+    var markReady = function(){ canShot.closest('.canframe').classList.add('ready'); };
+    if (canShot.complete && canShot.naturalWidth) markReady(); else canShot.addEventListener('load', markReady);
+  }
+  var proofCap = document.getElementById('proofCap');
+  var prows = Array.prototype.slice.call(document.querySelectorAll('.prow'));
+  if (crestLayer && prows.length){
+    // warm every disc so the swap never shows an empty well
+    prows.forEach(function(btn){
+      var im = new Image(); im.src = 'disc-' + btn.getAttribute('data-crest') + '.webp';
+    });
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    prows.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if (btn.classList.contains('is-on')) return;
+        prows.forEach(function(o){ o.classList.remove('is-on'); o.setAttribute('aria-pressed','false'); });
+        btn.classList.add('is-on'); btn.setAttribute('aria-pressed','true');
+        var key = btn.getAttribute('data-crest');
+        var cap = btn.getAttribute('data-cap');
+        var next = new Image();
+        next.onload = function(){
+          crestLayer.src = next.src;
+          if (!reduce){
+            crestLayer.style.animation = 'none';
+            void crestLayer.offsetWidth;
+            crestLayer.style.animation = '';
+          }
+          proofCap.textContent = key === 'yours'
+            ? 'Your crest, in the same well, on the same wine.'
+            : cap + ' \u00B7 a club that does not exist yet';
+        };
+        next.src = 'disc-' + key + '.webp';
+      });
+    });
+  }
+
+  /* the banner names a different club every few seconds */
+  var banner = document.getElementById('clubBanner');
+  var nameEl = document.getElementById('cycleName');
+  var clubNames = ['Oakhaven Country Club','Willow Creek Golf Club','Stone Ridge Racquet Club','The Foxglove Book Society','The Jade Table Club','Lakeside Hunt Club'];
+  var bi = 0, bPaused = false, bVisible = true;
+  function setBannerClub(i){
+    if (!nameEl) return;
+    bi = (i + clubNames.length) % clubNames.length;
+    nameEl.style.opacity = 0;
+    setTimeout(function(){
+      nameEl.textContent = clubNames[bi];
+      nameEl.style.opacity = 1;
+      if (banner) banner.setAttribute('aria-label',
+        'A club banner reading: canned exclusively for ' + clubNames[bi] + '. Press Enter for the next club.');
+    }, 260);
+  }
+  if (banner){
+    banner.addEventListener('mouseenter', function(){ bPaused = true; });
+    banner.addEventListener('mouseleave', function(){ bPaused = false; });
+    banner.addEventListener('focus', function(){ bPaused = true; });
+    banner.addEventListener('blur', function(){ bPaused = false; });
+    banner.addEventListener('click', function(){ setBannerClub(bi + 1); });
+    banner.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); setBannerClub(bi + 1); }
+    });
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ bVisible = en[0].isIntersecting; }).observe(banner);
+    }
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var shown = 0, bTimer = setInterval(function(){
+        if (bPaused || !bVisible) return;
+        setBannerClub(bi + 1);
+        if (++shown >= clubNames.length * 2) clearInterval(bTimer);
+      }, 3600);
+      banner.addEventListener('click', function(){ clearInterval(bTimer); });
+      banner.addEventListener('keydown', function(){ clearInterval(bTimer); });
+    }
+  }
+})();
+</script>
+</body>
+</html>
