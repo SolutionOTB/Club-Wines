@@ -16,7 +16,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script>document.documentElement.className+=" js";</script>
-<noscript><style>#gate{display:none}</style></noscript>
 <style>
 :root{
   --linen:#F7F3EB;
@@ -62,6 +61,63 @@ a{text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 #hero-title:focus-visible{outline:none}
 .clubs :focus-visible,footer :focus-visible{outline-color:var(--gold-on-dark)}
+
+
+/* ————— MASTHEAD : one label, every club ————— */
+.masthead{background:var(--obsidian);color:var(--linen);
+  padding:clamp(30px,4.4vh,48px) 24px clamp(26px,4vh,40px);
+  border-bottom:1px solid rgba(166,137,74,.34);position:relative;overflow:hidden}
+.masthead::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 8%,rgba(201,164,90,.16),transparent 62%)}
+.mh-inner{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.mh-wordmark{font-family:var(--serif);font-weight:700;color:var(--linen);
+  font-size:clamp(19px,2.2vw,24px);letter-spacing:.26em;text-indent:.26em;margin-bottom:12px}
+.mh-kicker{font-size:13.5px;font-style:italic;letter-spacing:.03em;
+  color:rgba(247,243,235,.78);margin-bottom:clamp(16px,2.4vh,24px)}
+
+.mh-stage{position:relative;width:clamp(210px,27vw,292px);aspect-ratio:1;margin:0 auto;
+  background:none;border:0;padding:0;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
+.mh-stage:focus-visible{outline:2px solid var(--gold-on-dark);outline-offset:9px;border-radius:50%}
+.mh-frame{position:absolute;inset:0;width:100%;height:100%;
+  animation:mhspin 90s linear infinite}
+.mh-stage:hover .mh-frame{animation-play-state:paused}
+@keyframes mhspin{to{transform:rotate(360deg)}}
+.mh-disc{position:absolute;left:50%;top:50%;width:76%;height:auto;border-radius:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 18px 46px -18px rgba(0,0,0,.75);
+  animation:mhland .66s cubic-bezier(.2,1.25,.4,1) both}
+@keyframes mhland{
+  0%  {opacity:0;transform:translate(-50%,-50%) scale(.86) rotate(-8deg)}
+  60% {opacity:1}
+  78% {transform:translate(-50%,-50%) scale(1.025) rotate(1.2deg)}
+  100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}
+}
+.mh-stage:hover .mh-disc{box-shadow:0 20px 54px -16px rgba(0,0,0,.8),0 0 0 1px rgba(201,164,90,.5)}
+
+.mh-kick2{font-size:10.5px;letter-spacing:.3em;color:rgba(247,243,235,.7);
+  margin:clamp(18px,2.6vh,26px) 0 8px}
+.mh-name{font-family:var(--serif);font-weight:400;
+  font-size:clamp(25px,4.2vw,40px);line-height:1.12;letter-spacing:-.008em;
+  color:var(--linen);transition:opacity .26s ease;min-height:1.15em}
+.mh-dia{display:block;width:6px;height:6px;transform:rotate(45deg);
+  background:var(--gold-on-dark);margin:16px auto 0}
+
+
+.mh-ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:clamp(12px,2vw,24px);margin-top:30px}
+.btn.light{background:var(--linen);color:var(--obsidian);border-color:var(--linen)}
+.btn.light:hover{background:#fff;border-color:#fff}
+.btn2.light{color:var(--linen);border-bottom-color:var(--gold-on-dark)}
+.btn2.light:hover{color:var(--gold-on-dark);border-bottom-color:var(--rose)}
+.mh-note{font-size:13px;letter-spacing:.03em;color:rgba(247,243,235,.72);margin-top:22px}
+@media (max-width:640px){
+  .mh-inner{padding:0 2px}
+  .mh-kicker{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mh-frame{animation:none}
+  .mh-disc{animation:none}
+}
 .gilt{position:fixed;top:0;left:0;right:0;height:5px;z-index:40;
   background:linear-gradient(90deg,#C99C9C,#E6B8B8 30%,#EEC6C4 50%,#E6B8B8 70%,#C99C9C);
   box-shadow:0 1px 0 rgba(166,137,74,.55)}
@@ -200,7 +256,7 @@ section{position:relative}
 }
 .btn2:hover{color:var(--gold-deep);border-color:var(--rose-ink)}
 .hero .note{
-  margin-top:16px;color:var(--ink-mute);font-size:14px;font-style:italic;
+  margin-top:16px;color:var(--ink-soft);font-size:14px;font-style:italic;
 }
 .hero .bannerwrap{display:flex;flex-direction:column;align-items:center}
 .brod{
@@ -220,25 +276,24 @@ section{position:relative}
 }
 .bmark{width:31%;height:auto;display:block;margin-bottom:6%}
 .brule{width:38%;height:1px;background:rgba(201,164,90,.55);display:block;margin-bottom:7%}
-.bkicker{
-  font-family:var(--sans);font-weight:600;font-size:clamp(8px,1.05vw,10px);
-  letter-spacing:.26em;text-indent:.26em;text-transform:uppercase;
-  color:var(--gold-on-dark);margin-bottom:6%;
-}
 .bname{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(17px,1.9vw,23px);line-height:1.26;letter-spacing:.02em;
-  color:var(--linen);transition:opacity .26s ease;
-  display:flex;align-items:center;justify-content:center;
-  min-height:2.52em;
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(21px,2.3vw,28px);line-height:1.15;
+  letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;
+  color:var(--linen);
+}
+.bscript{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(14px,1.5vw,18px);letter-spacing:.04em;
+  color:var(--rose);margin-top:5%;
 }
 .bdia{
   width:7px;height:7px;background:var(--rose);transform:rotate(45deg);
-  display:block;margin:7% 0 auto;flex:none;
+  display:block;margin:8% 0 auto;flex:none;
 }
 .bwordmark{
-  font-family:var(--serif);font-weight:700;
-  font-size:clamp(10px,1.15vw,13px);letter-spacing:.34em;text-indent:.34em;
+  font-family:var(--sans);font-weight:600;
+  font-size:clamp(9px,1.05vw,11.5px);letter-spacing:.24em;text-indent:.24em;
   text-transform:uppercase;color:var(--gold-on-dark);
 }
 .bannerwrap .note{text-align:center;margin-top:24px;max-width:34ch}
@@ -258,7 +313,6 @@ section{position:relative}
 }
 @media (prefers-reduced-motion:reduce){
   .bannerwrap.in .banner,.bannerwrap.in .brod{animation:none}
-  .bname{transition:none}
 }
 
 /* ————— statement ————— */
@@ -473,7 +527,7 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 .canframe{position:relative;width:100%;margin:0}
 .canshot{display:block;width:100%;height:auto}
 .crestlayer{
-  position:absolute;left:50%;top:31.75%;width:21.32%;height:auto;
+  position:absolute;left:49.3%;top:32.45%;width:21.32%;height:auto;
   transform:translate(-50%,-50%);
   visibility:hidden;
   animation:crestland .62s cubic-bezier(.2,1.3,.4,1) both;
@@ -489,12 +543,8 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
   margin-top:18px;text-align:center;color:rgba(247,243,235,.66);
   font-family:var(--serif);font-style:italic;font-size:14.5px;
 }
-.proofnote{
-  margin-top:-10px;text-align:center;color:rgba(247,243,235,.5);
-  font-family:var(--sans);font-size:12.5px;letter-spacing:.02em;max-width:38ch;
-  margin-left:auto;margin-right:auto;
-}
 .roll{width:100%}
+.roll-note{margin-top:14px;font-size:13px;font-style:italic;color:rgba(247,243,235,.72);letter-spacing:.02em}
 .roll-head{color:var(--gold-on-dark);margin-bottom:12px;text-align:center}
 .rollpick{display:flex;flex-direction:column}
 .prow{
@@ -547,16 +597,22 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 /* ————— article V : application ————— */
 .apply{padding:clamp(80px,11vh,130px) 0}
 .apply .paper{max-width:680px;margin:0 auto}
-.modeswitch{display:flex;gap:0;margin:clamp(24px,3.5vh,34px) auto 0;width:max-content;border:1px solid var(--hairline)}
+.modeswitch{display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  margin:clamp(24px,3.5vh,34px) auto 0;max-width:640px}
+.modeswitch .m-t{display:block;font-family:var(--serif);font-weight:700;font-size:18px;
+  letter-spacing:.01em;text-transform:none;margin-bottom:7px}
+.modeswitch .m-d{display:block;font-family:var(--sans);font-weight:400;font-size:13.5px;
+  line-height:1.55;letter-spacing:.01em;text-transform:none;color:var(--ink-soft)}
+@media (max-width:640px){.modeswitch{grid-template-columns:1fr}}
 .modeswitch .mode{
-  font-family:var(--sans);font-weight:600;font-size:11.5px;letter-spacing:.22em;
-  text-transform:uppercase;background:transparent;color:var(--ink-mute);
-  border:0;padding:14px 26px;min-height:44px;cursor:pointer;
-  transition:background .25s ease,color .25s ease;
+  text-align:left;background:none;border:1px solid var(--hairline);
+  padding:18px 20px;cursor:pointer;color:var(--obsidian);
+  transition:border-color .25s ease,background .25s ease,color .25s ease;
 }
-.modeswitch .mode + .mode{border-left:1px solid var(--hairline)}
 .modeswitch .mode:hover{color:var(--obsidian)}
-.modeswitch .mode.is-on{background:var(--obsidian);color:var(--linen)}
+.modeswitch .mode.is-on{background:var(--obsidian);color:var(--linen);border-color:var(--obsidian)}
+.modeswitch .mode.is-on .m-d{color:rgba(247,243,235,.88)}
+.modeswitch .mode:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
 .apply form{margin-top:clamp(30px,4vh,44px)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:34px 44px}
 .field{display:flex;flex-direction:column}
@@ -583,43 +639,11 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 .field .err{
   color:#8C3B2E;font-size:13px;margin-top:8px;display:none;font-style:italic;
 }
-.field .hint{
-  color:var(--ink-mute);font-size:13px;margin-top:8px;font-style:italic;
-}
 .field.bad input,.field.bad select{border-bottom-color:#8C3B2E}
 .field.bad .err{display:block}
-.field.checkbox-field{flex-direction:row;align-items:flex-start;gap:12px}
-.field.checkbox-field label.checkbox{
-  display:flex;align-items:flex-start;gap:12px;cursor:pointer;
-  font-family:var(--serif);font-weight:400;font-size:15.5px;letter-spacing:normal;
-  text-transform:none;color:var(--obsidian);margin-bottom:0;
-}
-.field.checkbox-field input[type="checkbox"]{
-  appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;
-  border:1px solid var(--hairline);border-radius:2px;margin-top:3px;cursor:pointer;
-  position:relative;transition:border-color .2s ease,background .2s ease;
-}
-.field.checkbox-field input[type="checkbox"]:checked{background:var(--obsidian);border-color:var(--obsidian)}
-.field.checkbox-field input[type="checkbox"]:checked::after{
-  content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;
-  border:solid var(--linen);border-width:0 2px 2px 0;transform:rotate(45deg);
-}
-.field.checkbox-field input[type="checkbox"]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.field.checkbox-field .err{margin-top:8px;margin-left:30px}
-.sponsor-toggle-row{margin-top:6px}
-.sponsor-fields{margin-top:30px;padding-top:30px;border-top:1px solid var(--hairline)}
-.sponsor-fields .sublabel{
-  font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--ink-mute);margin-bottom:18px;grid-column:1/-1;
-}
-@media (max-width:640px){.fgrid{grid-template-columns:1fr}}
 .apply .actions{margin-top:clamp(36px,5vh,48px);text-align:center}
 .apply .btn{width:100%;padding:21px 46px}
 .apply .btn[disabled]{opacity:.55;cursor:wait}
-.apply .commitment{
-  margin-bottom:20px;color:var(--gold-deep);font-size:14px;font-style:italic;text-align:center;
-}
-.apply .commitment:empty{display:none;margin-bottom:0}
 .apply .privacy{
   margin-top:20px;color:var(--ink-mute);font-size:14px;font-style:italic;text-align:center;
 }
@@ -641,14 +665,28 @@ footer .wordmark{
 }
 footer .rule{width:170px;margin:0 auto 24px}
 footer p{font-size:13.5px;letter-spacing:.04em;margin-bottom:8px}
-footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
+footer .fine{font-size:12px;color:rgba(247,243,235,.68);margin-top:14px}
+/* ————— footer colophon / legal ————— */
+footer .colophon{max-width:62ch;margin:34px auto 0;padding-top:24px;text-align:left;
+  border-top:1px solid rgba(166,137,74,.28)}
+footer .colophon .lab{font-size:11px;letter-spacing:.2em;color:var(--gold-on-dark);
+  margin-bottom:14px;text-align:center}
+footer .colophon p{font-size:12.5px;line-height:1.75;color:rgba(247,243,235,.74);
+  margin-bottom:11px}
+footer .colophon a{color:rgba(247,243,235,.86);text-decoration:none;
+  border-bottom:1px solid rgba(166,137,74,.55);padding-bottom:1px}
+footer .colophon a:hover{color:var(--linen);border-color:var(--gold-on-dark)}
+footer .colophon .legalnav{margin:10px 0 0;font-size:12.5px;text-align:center}
+footer .colophon .legalnav a{display:inline-block;padding:14px 10px;line-height:1.2}
+footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
+
 
 
 /* ————— responsive ————— */
 @media (max-width:900px){
   .hero .shell,.clubs .shell{grid-template-columns:1fr}
   .hero{padding-top:36px}
-  .hero .bannerwrap{margin-top:28px}
+  .hero .bannerwrap{order:-1;margin-bottom:14px}
   .banner{width:min(62vw,270px)}
   .brod{width:min(66vw,290px)}
   .hero .rule{margin-left:0}
@@ -682,6 +720,47 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   </div>
 </div>
 
+
+
+<!-- ————— MASTHEAD ————— -->
+<section class="masthead" aria-labelledby="mh-h">
+  <div class="mh-inner">
+    <h2 class="vh" id="mh-h">The same wine under every club’s crest</h2>
+    <p class="mh-wordmark">CLUB&nbsp;WINES</p>
+    <p class="mh-kicker">Your crest belongs on more than the blazer.</p>
+
+    <button type="button" class="mh-stage" id="mhStage" aria-label="Show the next club crest on the label">
+      <svg class="mh-frame" viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <linearGradient id="mgold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8F7238"/><stop offset=".34" stop-color="#C9A45A"/>
+            <stop offset=".62" stop-color="#EBD6A0"/><stop offset="1" stop-color="#8F7238"/>
+          </linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="197" fill="none" stroke="#A6894A" stroke-width=".9" opacity=".46"/>
+        <circle cx="200" cy="200" r="187" fill="none" stroke="url(#mgold)" stroke-width="2.2"/>
+        <g fill="url(#mgold)">
+          <rect x="196" y="4" width="8" height="8" transform="rotate(45 200 8)"/>
+          <rect x="196" y="388" width="8" height="8" transform="rotate(45 200 392)"/>
+          <rect x="4" y="196" width="8" height="8" transform="rotate(45 8 200)"/>
+          <rect x="388" y="196" width="8" height="8" transform="rotate(45 392 200)"/>
+        </g>
+      </svg>
+      <img class="mh-disc" id="mhDisc" src="disc-oak.webp" alt="" role="presentation"
+           width="440" height="440" decoding="async">
+    </button>
+
+    <p class="mh-kick2 smallcaps">Canned exclusively for</p>
+    <p class="mh-name" id="mhName">Oakhaven Country Club</p>
+    <span class="mh-dia" aria-hidden="true"></span>
+
+    <div class="mh-ctas">
+      <a class="btn light" href="#application" data-mode="member">Apply for Membership</a>
+      <a class="btn2 light" href="#application" data-mode="club">Put your crest on the can</a>
+    </div>
+  </div>
+</section>
+
 <main>
 
 <!-- ————— HERO ————— -->
@@ -695,19 +774,19 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
       </h1>
       <div class="rule reveal" style="--d:.16s" aria-hidden="true"><span class="dia"></span></div>
       <p class="eyebrow smallcaps reveal" style="--d:.19s">Estate Sparkling Rosé&nbsp;&nbsp;·&nbsp;&nbsp;Canned for Clubs</p>
-      <p class="sub reveal" style="--d:.22s">Glass is banned at the pool, on the course, and on the courts. Club Wines is the estate sparkling rosé that goes there anyway, canned under your club's own crest, from the member guest tee gift to the pool bar.</p>
+      <p class="sub reveal" style="--d:.22s">Estate sparkling rosé, made for the member guest, the 19th hole, and the pool deck. Founding membership is now open for application.</p>
       <div class="reveal" style="--d:.3s">
         <div class="ctas">
-          <a class="btn" href="#for-clubs" data-mode="club">See Your Crest on the Can</a>
-          <a class="btn2" href="#application" data-mode="member">Apply as a Member</a>
+          <a class="btn" href="#application" data-mode="member">Apply for Membership</a>
+          <a class="btn2" href="#for-clubs">For Clubs</a>
         </div>
         <p class="note">The committee reviews applications monthly.</p>
       </div>
     </div>
     <div class="bannerwrap reveal" style="--d:.14s">
       <span class="brod" aria-hidden="true"></span>
-      <button type="button" class="banner" id="clubBanner"
-              aria-label="Club banner: canned exclusively for Oakhaven Country Club. Activate for the next club.">
+      <div class="banner" id="clubBanner" role="img"
+           aria-label="A hanging club banner bearing the Club Wines monogram.">
         <svg class="bfield" viewBox="0 0 300 430" aria-hidden="true">
           <defs>
             <linearGradient id="bgold" x1="0" y1="0" x2="1" y2="1">
@@ -722,13 +801,12 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
         <div class="bcontent">
           <img class="bmark" src="logo-cw-light.png" alt="" width="240" height="240" decoding="async">
           <span class="brule" aria-hidden="true"></span>
-          <span class="bkicker">Canned exclusively for</span>
-          <span class="bname" id="cycleName">Oakhaven Country Club</span>
+          <span class="bname">Club Wines</span>
+          <span class="bscript">estate sparkling ros&eacute;</span>
           <span class="bdia" aria-hidden="true"></span>
-          <span class="bwordmark">Club Wines</span>
+          <span class="bwordmark">Members drink better.</span>
         </div>
-      </button>
-      <p class="note">Six clubs that do not exist yet. Yours could.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -742,6 +820,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
       <p class="big reveal">Glass is banned at the pool, on the course, and on&nbsp;the&nbsp;courts.</p>
       <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
       <p class="quiet reveal">Which is exactly where a club pours its summer. The wine list stays in the clubhouse. The can goes everywhere it cannot.</p>
+      <p class="reveal" style="margin-top:30px"><a class="btn2 light" href="#application" data-mode="member">Apply for Membership &rarr;</a></p>
     </div>
 
     <div class="venuebox reveal">
@@ -772,6 +851,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- ————— ARTICLE I : THE WINE ————— -->
@@ -798,8 +878,6 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
         <span class="tail" aria-hidden="true"></span>
       </div>
       <dl class="specgrid">
-        <div><dt>Format</dt><dd>12 oz can</dd></div>
-        <div><dt>Label</dt><dd>Fixed 46mm crest well, one TTB approval</dd></div>
         <div><dt>Appellation</dt><dd>El Dorado&nbsp;/&nbsp;Fairplay</dd></div>
         <div><dt>Vineyard</dt><dd>Element 79 Estate</dd></div>
         <div><dt>Elevation</dt><dd>2,400 ft</dd></div>
@@ -820,7 +898,12 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
       </div>
       <figcaption>The estate&nbsp;&nbsp;&#183;&nbsp;&nbsp;Element 79 Vineyards, Fairplay, California</figcaption>
     </figure>
+    <div class="reveal" style="margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2vw,26px)">
+      <a class="btn" href="#application" data-mode="member">Apply for Membership</a>
+      <a class="btn2" href="#for-clubs">Bring it to your club</a>
+    </div>
   </div>
+
 </section>
 
 
@@ -847,9 +930,8 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
           <img class="canshot" src="can-blank.jpg" alt="A Club Wines can with an empty crest medallion, ready for a club mark" width="620" height="793" decoding="async">
           <img class="crestlayer" id="crestLayer" src="disc-oak.webp" alt="" role="presentation" width="220" height="220" decoding="async">
         </div></div>
-        <figcaption id="proofCap" aria-live="polite">Oakhaven Country Club&nbsp;&nbsp;&#183;&nbsp;&nbsp;a club that does not exist yet</figcaption>
+        <figcaption id="proofCap" aria-live="polite">Oakhaven Country Club</figcaption>
       </figure>
-      <p class="proofnote">One approved label. Your crest drops into the well. No new federal approval, no new artwork cycle.</p>
 
       <div class="roll" role="group" aria-label="Preview a crest on the can">
         <p class="roll-head smallcaps" id="roll-head">Put a crest on the can</p>
@@ -862,6 +944,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
           <button type="button" class="prow" data-crest="quail"   data-cap="Lakeside Hunt Club"        aria-pressed="false"><span class="rn">vi.</span>Lakeside Hunt Club</button>
           <button type="button" class="prow yours" data-crest="yours" data-cap="Your club" aria-pressed="false"><span class="rn">vii.</span>Your club<span class="status">open</span></button>
         </div>
+        <p class="roll-note">Illustrative crests. Yours would be the first.</p>
       </div>
     </div>
   </div>
@@ -899,16 +982,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   </div>
 </section>
 
-<!-- ————— THE OTHER CLUBS ————— -->
-<section class="others" id="other-clubs">
-  <div class="shell">
-    <p class="article-no reveal">The Other Clubs</p>
-    <div class="rule reveal" aria-hidden="true"><span class="dia"></span></div>
-    <p class="line reveal">The Book Club, The Racquet Club, The Mahjong Club, The Bowling Club, and The Hunting Club remain before the committee.</p>
-    <p class="subline reveal">Members hear first when a new club opens its doors.</p>
-    <p class="reveal" style="margin-top:26px"><a class="btn" href="other-clubs.html">Meet the Other Clubs</a></p>
-  </div>
-</section>
+
 
 <!-- ————— ARTICLE IV : APPLICATION ————— -->
 <section class="apply" id="application">
@@ -920,15 +994,21 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
       <span class="tail" aria-hidden="true"></span>
       <span class="lab smallcaps">Article IV</span>
     </header>
-      <div class="modeswitch reveal" role="radiogroup" aria-label="Who is applying">
-        <button type="button" class="mode is-on" id="mode-member" role="radio" aria-checked="true">A member</button>
-        <button type="button" class="mode" id="mode-club" role="radio" aria-checked="false" tabindex="-1">A club</button>
+      <div class="modeswitch reveal" role="radiogroup" aria-label="Choose how you are applying">
+        <button type="button" class="mode is-on" id="mode-member" role="radio" aria-checked="true">
+          <span class="m-t">I belong to a club</span>
+          <span class="m-d">Join the founding member list. First cans of the debut run, and you can put your club forward.</span>
+        </button>
+        <button type="button" class="mode" id="mode-club" role="radio" aria-checked="false" tabindex="-1">
+          <span class="m-t">I run a club</span>
+          <span class="m-d">For GMs and F&amp;B directors. Get the club kit: your crest on the can, case pricing, lead times.</span>
+        </button>
       </div>
       <form id="appForm" novalidate class="reveal" aria-label="Application for Membership">
         <div class="fgrid">
           <div class="field" id="f-name">
             <label for="first_name">First name <span class="req">*</span></label>
-            <input type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Your given name" required aria-required="true" aria-describedby="err-name" maxlength="80">
+            <input type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Your given name" required aria-required="true" aria-describedby="err-name">
             <span class="err" id="err-name">The committee will need your name.</span>
           </div>
           <div class="field" id="f-email">
@@ -938,52 +1018,18 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
           </div>
           <div class="field" id="f-state">
             <label for="state">State <span class="req">*</span></label>
-            <select id="state" name="state" required aria-required="true" aria-describedby="err-state state-hint">
+            <select id="state" name="state" required aria-required="true" aria-describedby="err-state">
               <option value="" selected>Select your state</option>
-              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
             </select>
             <span class="err" id="err-state">Shipping wine requires your state.</span>
-            <span class="hint" id="state-hint">We ship direct from the winery to a limited number of states. If we can't reach yours yet, we'll say so plainly rather than leave you waiting.</span>
           </div>
-          <div class="field" id="f-club" data-club-mode-only hidden>
-            <label for="clubname" id="club-label">Your club <span class="req">*</span></label>
-            <input type="text" id="clubname" name="clubname" placeholder="Club name and your title" autocomplete="organization" aria-describedby="err-clubname" maxlength="120">
+          <div class="field" id="f-club">
+            <label for="clubname" id="club-label">Your club <span class="opt-note">(optional)</span></label>
+            <input type="text" id="clubname" name="clubname" placeholder="e.g. Riviera Country Club" autocomplete="organization" aria-describedby="err-clubname">
             <span class="err" id="err-clubname">The committee will need the club name.</span>
           </div>
         </div>
-        <div class="field checkbox-field sponsor-toggle-row" id="f-sponsor-toggle" data-member-mode-only>
-          <label class="checkbox">
-            <input type="checkbox" id="sponsor_toggle" name="sponsor_toggle">
-            <span>I'd like to sponsor my club</span>
-          </label>
-        </div>
-        <div class="fgrid sponsor-fields" id="sponsor-fields" data-member-mode-only hidden>
-          <p class="sublabel">Tell us who to contact</p>
-          <div class="field" id="f-sponsor-club">
-            <label for="sponsor_club">Club name <span class="req">*</span></label>
-            <input type="text" id="sponsor_club" name="sponsor_club" placeholder="e.g. Serrano Country Club" autocomplete="organization" aria-describedby="err-sponsor-club" maxlength="120">
-            <span class="err" id="err-sponsor-club">The committee will need the club's name.</span>
-          </div>
-          <div class="field" id="f-contact-name">
-            <label for="contact_name">Who should we contact? <span class="req">*</span></label>
-            <input type="text" id="contact_name" name="contact_name" placeholder="Name and title, e.g. Jane Doe, GM" aria-describedby="err-contact-name" maxlength="120">
-            <span class="err" id="err-contact-name">We need a name to reach out to.</span>
-          </div>
-          <div class="field" id="f-contact-email">
-            <label for="contact_email">Their email <span class="req">*</span></label>
-            <input type="email" id="contact_email" name="contact_email" placeholder="name@club.com" autocomplete="email" aria-describedby="err-contact-email">
-            <span class="err" id="err-contact-email">A working email for your contact, please.</span>
-          </div>
-          <div class="field checkbox-field" id="f-permission">
-            <label class="checkbox">
-              <input type="checkbox" id="permission" name="permission" aria-describedby="err-permission">
-              <span>I've spoken with them, and they're open to hearing from Club Wines.</span>
-            </label>
-            <span class="err" id="err-permission">Please confirm before we reach out to your contact.</span>
-          </div>
-        </div>
         <div class="actions">
-          <p class="commitment" id="commitment-note"></p>
           <button type="submit" class="btn" id="submitBtn">Submit Application</button>
           <p class="privacy" id="privacy-note">We ask your state because shipping wine is a state by state affair. No spam, nothing shared, resign anytime.</p>
           <p class="senderr" id="senderr" role="alert">Something went wrong on our end. Try once more.</p>
@@ -1002,6 +1048,18 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   </div>
 </section>
 
+
+<!-- ————— THE OTHER CLUBS ————— -->
+<section class="others" id="other-clubs">
+  <div class="shell">
+    <p class="article-no reveal">The Other Clubs</p>
+    <div class="rule reveal" aria-hidden="true"><span class="dia"></span></div>
+    <p class="line reveal">The Book Club, The Racquet Club, The Mahjong Club, The Bowling Club, and The Hunting Club remain before the committee.</p>
+    <p class="subline reveal">Members hear first when a new club opens its doors.</p>
+    <p class="reveal" style="margin-top:26px"><a class='btn' href='other-clubs.html'>Meet the Other Clubs</a></p>
+  </div>
+</section>
+
 </main>
 
 <!-- ————— FOOTER ————— -->
@@ -1011,11 +1069,29 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   <nav aria-label="Footer">
     <a href="#application" data-mode="member">Application</a>
     <a href="#for-clubs">For Clubs</a>
-    <a href="other-clubs.html">The Other Clubs</a>
+    <a href='other-clubs.html'>The Other Clubs</a>
   </nav>
-  <p>Grown, produced and canned by Element 79 Vineyards&nbsp;&nbsp;·&nbsp;&nbsp;Fairplay, California</p>
+  <p>Grown, produced and canned by Element 79 Vineyards</p>
   <p>You must be 21 or older. Please enjoy responsibly.</p>
-  <p class="fine">&copy; 2026 Club Wines. All rights reserved.</p>
+
+  <div class="colophon">
+    <p class="smallcaps lab">Sparkling Ros&eacute; Wine</p>
+    <p>Club Wines is a brand of <strong>Element&nbsp;79 Vineyards, Somerset, California</strong>.
+       Grown, produced and canned at the Element&nbsp;79 estate in the El&nbsp;Dorado appellation.</p>
+    <p>This site does not sell wine. It accepts membership applications and club
+       inquiries only. Nothing here is an offer to sell or a solicitation to buy
+       alcoholic beverages in any jurisdiction where such an offer is unlawful.</p>
+    <p>You must be of legal drinking age (21 in the United States) to enter this
+       site or to join the list. Please do not share our content with anyone under 21.
+       Please enjoy responsibly, and never drink and drive.</p>
+    <p>Element&nbsp;79 Vineyards&nbsp;&nbsp;&#183;&nbsp;&nbsp;7350 Fairplay Road, Somerset, California 95684&nbsp;&nbsp;&#183;&nbsp;&nbsp;<a href="tel:+15304970750" style="display:inline-block;padding:14px 6px;margin:-14px -6px">530-497-0750</a></p>
+    <p class="legalnav">
+      <a href='privacy.html'>Privacy Policy</a><span aria-hidden="true">&#183;</span><a href='other-clubs.html'>The Other Clubs</a>
+    </p>
+    <p class="fine">&copy; 2026 Club Wines. All rights reserved.
+      Club names shown on this site are illustrative and do not represent
+      existing clubs or customers.</p>
+  </div>
 </footer>
 
 <script>
@@ -1044,15 +1120,17 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     gate.classList.add('closing');
     document.body.style.overflow = '';
     var heroTitle = document.getElementById('hero-title');
-    if (heroTitle) heroTitle.focus();
+    if (heroTitle) heroTitle.focus({preventScroll:true});
     setTimeout(function(){ gate.remove(); }, 520);
   });
   }
 
-  /* states — the <select> already carries the full option list in markup so a
-     blocked or failed script never leaves an unsubmittable form; nothing to
-     populate here. */
+  /* states */
+  var STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   var stateSel = document.getElementById('state');
+  STATES.forEach(function(s){
+    var o = document.createElement('option'); o.textContent = s; stateSel.appendChild(o);
+  });
 
   /* reveal on entry */
   Array.prototype.forEach.call(document.querySelectorAll('[data-stagger]'), function(list){
@@ -1091,22 +1169,8 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   var modeMember = document.getElementById('mode-member');
   var modeClub = document.getElementById('mode-club');
   var clubName = document.getElementById('clubname');
-  var clubModeEls = document.querySelectorAll('[data-club-mode-only]');
-  var memberModeEls = document.querySelectorAll('[data-member-mode-only]');
-  var sponsorToggle = document.getElementById('sponsor_toggle');
-  var sponsorFields = document.getElementById('sponsor-fields');
+  var clubLabel = document.getElementById('club-label');
   var applyMode = 'member';
-  function updateCommitmentNote(){
-    var cn = document.getElementById('commitment-note');
-    if (!cn) return;
-    var isClub = applyMode === 'club';
-    var sponsorOn = !isClub && !!(sponsorToggle && sponsorToggle.checked);
-    cn.textContent = isClub
-      ? 'Crest mockup, case counts, and lead times — back to you within two business days.'
-      : sponsorOn
-        ? 'We will reach out to your contact directly and let them know you made the introduction.'
-        : '';
-  }
   function setMode(m){
     applyMode = m;
     var isClub = m === 'club';
@@ -1116,13 +1180,11 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     modeMember.setAttribute('aria-checked', isClub ? 'false' : 'true');
     modeClub.tabIndex = isClub ? 0 : -1;
     modeMember.tabIndex = isClub ? -1 : 0;
-    Array.prototype.forEach.call(clubModeEls, function(el){ el.hidden = !isClub; });
-    Array.prototype.forEach.call(memberModeEls, function(el){ el.hidden = isClub; });
+    clubLabel.innerHTML = isClub
+      ? 'Your club and your title <span class="req">*</span>'
+      : 'Your club <span class="opt-note">(optional)</span>';
+    clubName.placeholder = isClub ? 'e.g. Riviera Country Club, F&B Director' : 'e.g. Riviera Country Club';
     document.getElementById('f-club').classList.remove('bad');
-    if (isClub && sponsorToggle){
-      sponsorToggle.checked = false;
-      if (sponsorFields) sponsorFields.hidden = true;
-    }
     if (btn) btn.textContent = isClub ? 'Request the Club Kit' : 'Submit Application';
     var at = document.getElementById('apply-title');
     if (at) at.textContent = isClub ? 'Request the Club Kit' : 'Application for Membership';
@@ -1130,18 +1192,6 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     if (pn) pn.textContent = isClub
       ? 'We ask your state because wine licensing is a state by state affair. No spam, nothing shared.'
       : 'We ask your state because shipping wine is a state by state affair. No spam, nothing shared, resign anytime.';
-    updateCommitmentNote();
-  }
-  if (sponsorToggle){
-    sponsorToggle.addEventListener('change', function(){
-      sponsorFields.hidden = !sponsorToggle.checked;
-      if (!sponsorToggle.checked){
-        ['f-sponsor-club','f-contact-name','f-contact-email','f-permission'].forEach(function(id){
-          document.getElementById(id).classList.remove('bad');
-        });
-      }
-      updateCommitmentNote();
-    });
   }
   if (modeMember && modeClub){
     modeMember.addEventListener('click', function(){ setMode('member'); });
@@ -1164,8 +1214,6 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   var form = document.getElementById('appForm');
   var btn = document.getElementById('submitBtn');
   var senderr = document.getElementById('senderr');
-  var senderrOffline = 'You appear to be offline. Check your connection and try once more.';
-  var senderrGeneric = 'Something went wrong on our end. Try once more.';
   function bad(id, isBad){
     var f = document.getElementById(id);
     f.classList.toggle('bad', isBad);
@@ -1180,23 +1228,12 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     var email = document.getElementById('email').value.trim();
     var state = stateSel.value;
     var isClub = applyMode === 'club';
-    var club = isClub ? clubName.value.trim() : null;
-    var sponsorOn = !isClub && !!(sponsorToggle && sponsorToggle.checked);
-    var sponsorClub = sponsorOn ? document.getElementById('sponsor_club').value.trim() : null;
-    var contactName = sponsorOn ? document.getElementById('contact_name').value.trim() : null;
-    var contactEmail = sponsorOn ? document.getElementById('contact_email').value.trim() : null;
-    var permissionGiven = sponsorOn ? document.getElementById('permission').checked : null;
+    var club = clubName.value.trim() || null;
     var invalid = false;
     invalid = bad('f-name', !name) || invalid;
     invalid = bad('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || invalid;
     invalid = bad('f-state', !state) || invalid;
     if (isClub) invalid = bad('f-club', !club) || invalid;
-    if (sponsorOn){
-      invalid = bad('f-sponsor-club', !sponsorClub) || invalid;
-      invalid = bad('f-contact-name', !contactName) || invalid;
-      invalid = bad('f-contact-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) || invalid;
-      invalid = bad('f-permission', !permissionGiven) || invalid;
-    }
     if (invalid){
       var firstBad = form.querySelector('.field.bad input:not([hidden]), .field.bad select:not([hidden])');
       if (firstBad) firstBad.focus();
@@ -1206,19 +1243,12 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     btn.setAttribute('aria-busy','true');
     var btnLabel = btn.textContent;
     btn.textContent = isClub ? 'Sending your request' : 'Submitting your application';
-    var controller = ('AbortController' in window) ? new AbortController() : null;
-    var timedOut = false;
-    var timeoutId = controller ? setTimeout(function(){ timedOut = true; controller.abort(); }, 15000) : null;
     fetch(ENDPOINT, {
       method:'POST',
       headers:{'apikey':APIKEY,'Content-Type':'application/json','Prefer':'return=minimal'},
       body: JSON.stringify({first_name:name, email:email, state:state, club:club,
-        sponsor_club: sponsorClub, contact_name: contactName, contact_email: contactEmail,
-        permission: permissionGiven,
-        source: isClub ? 'club-inquiry' : (sponsorOn ? 'member-sponsor' : 'website')}),
-      signal: controller ? controller.signal : undefined
+        source: isClub ? 'club-inquiry' : 'website'})
     }).then(function(r){
-      if (timeoutId) clearTimeout(timeoutId);
       if (r.status === 201 || r.status === 409){
         var dupe = r.status === 409;
         form.style.display = 'none';
@@ -1229,32 +1259,24 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
         if (dupe){
           dh.textContent = 'You are already on the roll.';
           dp.textContent = isClub
-            ? 'That address is already with the committee. Nothing further is needed here — if your club name has changed, you are welcome to submit again.'
+            ? 'That address is already with the committee. Call 530-497-0750 with your club name and we will take it from there.'
             : 'That address is already with the committee. Nothing further is needed.';
         } else if (isClub){
           dh.textContent = 'Request received, ' + name + '.';
-          dp.textContent = 'The committee will be in touch within two business days, including honestly if we cannot yet ship to your state.';
-        } else if (sponsorOn){
-          dh.textContent = 'Application received, ' + name + '.';
-          dp.textContent = 'The committee will reach out to ' + contactName + ' at ' + sponsorClub + ' directly.';
+          dp.textContent = 'The committee will be in touch within two business days.';
         } else {
           dh.textContent = 'Application received, ' + name + '.';
-          dp.textContent = 'The committee reviews applications monthly. Watch your inbox.';
+          dp.textContent = 'The committee reviews applications monthly.';
         }
         done.style.display = 'block';
         done.focus();
       } else {
-        senderr.textContent = senderrGeneric;
         senderr.style.display = 'block';
         btn.disabled = false;
         btn.removeAttribute('aria-busy');
         btn.textContent = btnLabel;
       }
     }).catch(function(){
-      if (timeoutId) clearTimeout(timeoutId);
-      senderr.textContent = (timedOut || ('onLine' in navigator && !navigator.onLine))
-        ? senderrOffline
-        : senderrGeneric;
       senderr.style.display = 'block';
       btn.disabled = false;
       btn.removeAttribute('aria-busy');
@@ -1281,6 +1303,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   function stopVAuto(){ if (vAuto){ clearInterval(vAuto); vAuto = null; } vTouched = true; }
   vtabs.forEach(function(t, i){
     t.addEventListener('click', function(){ stopVAuto(); showVenue(i); });
+    t.addEventListener('mouseenter', function(){ if (!vTouched) showVenue(i); });
     t.addEventListener('keydown', function(ev){
       var k = ev.key, n = null;
       if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % vtabs.length;
@@ -1296,11 +1319,7 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     new IntersectionObserver(function(en){
       if (en[0].isIntersecting && !vSeen && !vTouched){
         vSeen = true;
-        var vShown = 0;
-        vAuto = setInterval(function(){
-          showVenue((vIndex + 1) % vtabs.length);
-          if (++vShown >= vtabs.length * 2) stopVAuto();
-        }, 4200);
+        vAuto = setInterval(function(){ showVenue((vIndex + 1) % vtabs.length); }, 4200);
       } else if (!en[0].isIntersecting && vAuto){
         clearInterval(vAuto); vAuto = null; vSeen = false;
       }
@@ -1328,6 +1347,17 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
     drawProgress();
   }
 
+
+  /* the top rail drives the banner and the can */
+  var railBtns = Array.prototype.slice.call(document.querySelectorAll('.rc'));
+  function railSync(key){
+    railBtns.forEach(function(b){
+      var on = b.getAttribute('data-crest') === key;
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
   /* put a crest on the can — the roll drives the product shot */
   var crestLayer = document.getElementById('crestLayer');
   var canShot = document.querySelector('.canshot');
@@ -1337,73 +1367,135 @@ footer .fine{font-size:12px;color:rgba(247,243,235,.62);margin-top:14px}
   }
   var proofCap = document.getElementById('proofCap');
   var prows = Array.prototype.slice.call(document.querySelectorAll('.prow'));
-  if (crestLayer && prows.length){
-    // warm every disc so the swap never shows an empty well
-    prows.forEach(function(btn){
-      var im = new Image(); im.src = 'disc-' + btn.getAttribute('data-crest') + '.webp';
-    });
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    prows.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        if (btn.classList.contains('is-on')) return;
-        prows.forEach(function(o){ o.classList.remove('is-on'); o.setAttribute('aria-pressed','false'); });
-        btn.classList.add('is-on'); btn.setAttribute('aria-pressed','true');
-        var key = btn.getAttribute('data-crest');
-        var cap = btn.getAttribute('data-cap');
-        var next = new Image();
-        next.onload = function(){
-          crestLayer.src = next.src;
-          if (!reduce){
-            crestLayer.style.animation = 'none';
-            void crestLayer.offsetWidth;
-            crestLayer.style.animation = '';
-          }
-          proofCap.textContent = key === 'yours'
-            ? 'Your crest, in the same well, on the same wine.'
-            : cap + ' \u00B7 a club that does not exist yet';
-        };
-        next.src = 'disc-' + key + '.webp';
-      });
-    });
-  }
-
-  /* the banner names a different club every few seconds */
   var banner = document.getElementById('clubBanner');
   var nameEl = document.getElementById('cycleName');
-  var clubNames = ['Oakhaven Country Club','Willow Creek Golf Club','Stone Ridge Racquet Club','The Foxglove Book Society','The Jade Table Club','Lakeside Hunt Club'];
-  var bi = 0, bPaused = false, bVisible = true;
-  function setBannerClub(i){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var CLUBS = [
+    {k:'oak',     n:'Oakhaven Country Club'},
+    {k:'willow',  n:'Willow Creek Golf Club'},
+    {k:'racquet', n:'Stone Ridge Racquet Club'},
+    {k:'book',    n:'The Foxglove Book Society'},
+    {k:'mahjong', n:'The Jade Table Club'},
+    {k:'quail',   n:'Lakeside Hunt Club'}
+  ];
+  function idxOf(key){ for (var i=0;i<CLUBS.length;i++){ if (CLUBS[i].k===key) return i; } return -1; }
+
+  /* warm every disc so a swap never shows an empty well */
+  railBtns.concat(prows).forEach(function(btn){
+    var im = new Image(); im.src = 'disc-' + btn.getAttribute('data-crest') + '.webp';
+  });
+
+  var current = 'oak';
+
+  function paintCan(key, cap){
+    if (!crestLayer) return;
+    var next = new Image();
+    next.onload = function(){
+      crestLayer.src = next.src;
+      if (!reduce){
+        crestLayer.style.animation = 'none';
+        void crestLayer.offsetWidth;
+        crestLayer.style.animation = '';
+      }
+      if (proofCap) proofCap.textContent = key === 'yours'
+        ? 'Your crest here, on exactly the same wine.'
+        : cap;
+    };
+    next.src = 'disc-' + key + '.webp';
+  }
+
+  var mhDisc = document.getElementById('mhDisc');
+  var mhName = document.getElementById('mhName');
+  var mhStage = document.getElementById('mhStage');
+  function paintMast(key, cap){
+    var label = key === 'yours' ? 'Your club' : cap;
+    if (mhName){
+      mhName.style.opacity = 0;
+      setTimeout(function(){ mhName.textContent = label; mhName.style.opacity = 1; }, 210);
+    }
+    if (!mhDisc) return;
+    var im = new Image();
+    im.onload = function(){
+      mhDisc.src = im.src;
+      if (!reduce){
+        mhDisc.style.animation = 'none';
+        void mhDisc.offsetWidth;
+        mhDisc.style.animation = '';
+      }
+    };
+    im.src = 'disc-' + key + '.webp';
+  }
+
+  function paintBanner(key, cap){
     if (!nameEl) return;
-    bi = (i + clubNames.length) % clubNames.length;
+    var label = key === 'yours' ? 'Your club' : cap;
     nameEl.style.opacity = 0;
     setTimeout(function(){
-      nameEl.textContent = clubNames[bi];
+      nameEl.textContent = label;
       nameEl.style.opacity = 1;
       if (banner) banner.setAttribute('aria-label',
-        'A club banner reading: canned exclusively for ' + clubNames[bi] + '. Press Enter for the next club.');
+        'A club banner reading: canned exclusively for ' + label + '. Press Enter for the next club.');
     }, 260);
   }
-  if (banner){
-    banner.addEventListener('mouseenter', function(){ bPaused = true; });
-    banner.addEventListener('mouseleave', function(){ bPaused = false; });
-    banner.addEventListener('focus', function(){ bPaused = true; });
-    banner.addEventListener('blur', function(){ bPaused = false; });
-    banner.addEventListener('click', function(){ setBannerClub(bi + 1); });
-    banner.addEventListener('keydown', function(ev){
-      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); setBannerClub(bi + 1); }
+
+  /* one club at a time, everywhere on the page */
+  function setClub(key, cap, opts){
+    if (key === current) return;
+    current = key;
+    opts = opts || {};
+    railSync(key);
+    prows.forEach(function(o){
+      var on = o.getAttribute('data-crest') === key;
+      o.classList.toggle('is-on', on);
+      o.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
+    paintMast(key, cap);
+    if (!opts.skipCan) paintCan(key, cap);
+    if (!opts.skipBanner) paintBanner(key, cap);
+  }
+
+  railBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setClub(btn.getAttribute('data-crest'), btn.getAttribute('data-cap'));
+      stopCycle();
+    });
+  });
+
+  if (mhStage){
+    mhStage.addEventListener('click', function(){ nextClub(); stopCycle(); });
+  }
+
+  prows.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setClub(btn.getAttribute('data-crest'), btn.getAttribute('data-cap'));
+      stopCycle();
+    });
+  });
+
+  /* the banner names a different club every few seconds */
+  var bPaused = false, bVisible = true, bTimer = null, shown = 0;
+  function stopCycle(){ if (bTimer){ clearInterval(bTimer); bTimer = null; } }
+  function nextClub(){
+    var i = idxOf(current);
+    var nx = CLUBS[(i + 1 + CLUBS.length) % CLUBS.length];
+    setClub(nx.k, nx.n);
+  }
+  if (mhStage){
+    mhStage.addEventListener('mouseenter', function(){ bPaused = true; });
+    mhStage.addEventListener('mouseleave', function(){ bPaused = false; });
+    mhStage.addEventListener('focus', function(){ bPaused = true; });
+    mhStage.addEventListener('blur', function(){ bPaused = false; });
     if ('IntersectionObserver' in window){
-      new IntersectionObserver(function(en){ bVisible = en[0].isIntersecting; }).observe(banner);
+      new IntersectionObserver(function(en){ bVisible = en[0].isIntersecting; }).observe(mhStage);
     }
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      var shown = 0, bTimer = setInterval(function(){
-        if (bPaused || !bVisible) return;
-        setBannerClub(bi + 1);
-        if (++shown >= clubNames.length * 2) clearInterval(bTimer);
-      }, 3600);
-      banner.addEventListener('click', function(){ clearInterval(bTimer); });
-      banner.addEventListener('keydown', function(){ clearInterval(bTimer); });
-    }
+  }
+  if (!reduce){
+    bTimer = setInterval(function(){
+      if (bPaused || !bVisible) return;
+      nextClub();
+      if (++shown >= CLUBS.length * 3) stopCycle();
+    }, 3600);
   }
 })();
 </script>
