@@ -641,6 +641,22 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 }
 .field.bad input,.field.bad select{border-bottom-color:#8C3B2E}
 .field.bad .err{display:block}
+.checkbox-field{grid-column:1/-1}
+.checkbox-field .checkbox{display:flex;align-items:flex-start;gap:12px;cursor:pointer;
+  font-family:var(--sans);font-size:15px;color:var(--obsidian);line-height:1.5}
+.checkbox-field input[type=checkbox]{appearance:none;-webkit-appearance:none;width:20px;height:20px;
+  flex:0 0 20px;border:1px solid var(--hairline);border-radius:2px;margin-top:2px;position:relative;
+  cursor:pointer;transition:border-color .2s ease,background-color .2s ease}
+.checkbox-field input[type=checkbox]:checked{background:var(--obsidian);border-color:var(--obsidian)}
+.checkbox-field input[type=checkbox]:checked::after{content:'';position:absolute;left:6px;top:2px;
+  width:5px;height:10px;border:solid var(--linen);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.checkbox-field input[type=checkbox]:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
+.checkbox-field.bad input[type=checkbox]{border-color:#8C3B2E}
+.checkbox-field .err{color:#8C3B2E;font-size:13px;margin-top:8px;display:none;font-style:italic;margin-left:32px}
+.checkbox-field.bad .err{display:block}
+.sponsor-fields{margin-top:8px}
+.sponsor-fields .sublabel{grid-column:1/-1;font-family:var(--sans);font-weight:600;font-size:11px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 -4px}
 .apply .actions{margin-top:clamp(36px,5vh,48px);text-align:center}
 .apply .btn{width:100%;padding:21px 46px}
 .apply .btn[disabled]{opacity:.55;cursor:wait}
@@ -1028,6 +1044,32 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
             <input type="text" id="clubname" name="clubname" placeholder="e.g. Riviera Country Club" autocomplete="organization" aria-describedby="err-clubname">
             <span class="err" id="err-clubname">The committee will need the club name.</span>
           </div>
+          <div class="field checkbox-field" id="f-sponsor-toggle">
+            <label class="checkbox">
+              <input type="checkbox" id="sponsor_toggle" name="sponsor_toggle">
+              <span>I'd like to sponsor my club</span>
+            </label>
+          </div>
+        </div>
+        <div class="fgrid sponsor-fields" id="sponsor-fields" hidden>
+          <p class="sublabel">Tell us who to contact</p>
+          <div class="field" id="f-contact-name">
+            <label for="contact_name">Who should we contact? <span class="req">*</span></label>
+            <input type="text" id="contact_name" name="contact_name" placeholder="Name and title, e.g. Jane Doe, GM" aria-describedby="err-contact-name">
+            <span class="err" id="err-contact-name">We need a name to reach out to.</span>
+          </div>
+          <div class="field" id="f-contact-email">
+            <label for="contact_email">Their email <span class="req">*</span></label>
+            <input type="email" id="contact_email" name="contact_email" placeholder="name@club.com" autocomplete="email" aria-describedby="err-contact-email">
+            <span class="err" id="err-contact-email">A working email for your contact, please.</span>
+          </div>
+          <div class="field checkbox-field" id="f-permission">
+            <label class="checkbox">
+              <input type="checkbox" id="permission" name="permission" aria-describedby="err-permission">
+              <span>I've spoken with them, and they're open to hearing from Club Wines.</span>
+            </label>
+            <span class="err" id="err-permission">Please confirm before we reach out to your contact.</span>
+          </div>
         </div>
         <div class="actions">
           <button type="submit" class="btn" id="submitBtn">Submit Application</button>
@@ -1171,6 +1213,17 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
   var clubName = document.getElementById('clubname');
   var clubLabel = document.getElementById('club-label');
   var applyMode = 'member';
+  function updateClubLabel(){
+    var isClub = applyMode === 'club';
+    var sponsorOn = !isClub && sponsorToggle && sponsorToggle.checked;
+    if (isClub){
+      clubLabel.innerHTML = 'Your club and your title <span class="req">*</span>';
+    } else if (sponsorOn){
+      clubLabel.innerHTML = 'Your club <span class="req">*</span>';
+    } else {
+      clubLabel.innerHTML = 'Your club <span class="opt-note">(optional)</span>';
+    }
+  }
   function setMode(m){
     applyMode = m;
     var isClub = m === 'club';
@@ -1180,11 +1233,14 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     modeMember.setAttribute('aria-checked', isClub ? 'false' : 'true');
     modeClub.tabIndex = isClub ? 0 : -1;
     modeMember.tabIndex = isClub ? -1 : 0;
-    clubLabel.innerHTML = isClub
-      ? 'Your club and your title <span class="req">*</span>'
-      : 'Your club <span class="opt-note">(optional)</span>';
     clubName.placeholder = isClub ? 'e.g. Riviera Country Club, F&B Director' : 'e.g. Riviera Country Club';
+    updateClubLabel();
     document.getElementById('f-club').classList.remove('bad');
+    var stRow = document.getElementById('f-sponsor-toggle');
+    if (stRow){
+      stRow.hidden = isClub;
+      if (isClub && sponsorToggle){ sponsorToggle.checked = false; setSponsorVisible(false); }
+    }
     if (btn) btn.textContent = isClub ? 'Request the Club Kit' : 'Submit Application';
     var at = document.getElementById('apply-title');
     if (at) at.textContent = isClub ? 'Request the Club Kit' : 'Application for Membership';
@@ -1210,6 +1266,30 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     });
   }
 
+  /* sponsor-my-club toggle (member mode only) */
+  var sponsorToggle = document.getElementById('sponsor_toggle');
+  var sponsorFields = document.getElementById('sponsor-fields');
+  var sponsorToggleRow = document.getElementById('f-sponsor-toggle');
+  var contactName = document.getElementById('contact_name');
+  var contactEmail = document.getElementById('contact_email');
+  var permission = document.getElementById('permission');
+  function setSponsorVisible(on){
+    sponsorFields.hidden = !on;
+    if (!on){
+      sponsorToggle.checked = false;
+      document.getElementById('f-permission').classList.remove('bad');
+      bad('f-contact-name', false);
+      bad('f-contact-email', false);
+    }
+  }
+  if (sponsorToggle){
+    sponsorToggle.addEventListener('change', function(){
+      setSponsorVisible(sponsorToggle.checked);
+      document.getElementById('f-club').classList.remove('bad');
+      updateClubLabel();
+    });
+  }
+
   /* form */
   var form = document.getElementById('appForm');
   var btn = document.getElementById('submitBtn');
@@ -1228,12 +1308,24 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     var email = document.getElementById('email').value.trim();
     var state = stateSel.value;
     var isClub = applyMode === 'club';
+    var sponsorOn = !isClub && sponsorToggle && sponsorToggle.checked;
     var club = clubName.value.trim() || null;
+    var cName = contactName.value.trim();
+    var cEmail = contactEmail.value.trim();
+    var permGiven = permission.checked;
     var invalid = false;
     invalid = bad('f-name', !name) || invalid;
     invalid = bad('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || invalid;
     invalid = bad('f-state', !state) || invalid;
     if (isClub) invalid = bad('f-club', !club) || invalid;
+    if (sponsorOn){
+      invalid = bad('f-club', !club) || invalid;
+      invalid = bad('f-contact-name', !cName) || invalid;
+      invalid = bad('f-contact-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) || invalid;
+      var permBad = !permGiven;
+      document.getElementById('f-permission').classList.toggle('bad', permBad);
+      invalid = permBad || invalid;
+    }
     if (invalid){
       var firstBad = form.querySelector('.field.bad input:not([hidden]), .field.bad select:not([hidden])');
       if (firstBad) firstBad.focus();
@@ -1247,7 +1339,11 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
       method:'POST',
       headers:{'apikey':APIKEY,'Content-Type':'application/json','Prefer':'return=minimal'},
       body: JSON.stringify({first_name:name, email:email, state:state, club:club,
-        source: isClub ? 'club-inquiry' : 'website'})
+        sponsor_club: sponsorOn ? club : null,
+        contact_name: sponsorOn ? cName : null,
+        contact_email: sponsorOn ? cEmail : null,
+        permission: sponsorOn ? permGiven : null,
+        source: isClub ? 'club-inquiry' : (sponsorOn ? 'member-sponsor' : 'website')})
     }).then(function(r){
       if (r.status === 201 || r.status === 409){
         var dupe = r.status === 409;
@@ -1264,6 +1360,9 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
         } else if (isClub){
           dh.textContent = 'Request received, ' + name + '.';
           dp.textContent = 'The committee will be in touch within two business days.';
+        } else if (sponsorOn){
+          dh.textContent = 'Application received, ' + name + '.';
+          dp.textContent = 'The committee will reach out to ' + cName + ' at ' + club + ' directly.';
         } else {
           dh.textContent = 'Application received, ' + name + '.';
           dp.textContent = 'The committee reviews applications monthly.';
