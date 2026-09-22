@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club Wines | Members Drink Better</title>
-<meta name="description" content="Estate grown sparkling rosé, canned for the pool deck, the course, and the courts. Founding membership is now open for application.">
+<meta name="description" content="Estate grown sparkling rosé in a 12 oz can, with your club's crest on the label. Poured all year, everywhere at the club that glass cannot go.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Country Club Wines | Members Drink Better">
-<meta property="og:description" content="Estate grown sparkling rosé, canned for the pool deck, the course, and the courts. Founding membership is now open for application.">
-<meta property="og:image" content="https://otbwine.com/sc-pool.jpg">
-<meta property="og:url" content="https://otbwine.com/">
+<meta property="og:title" content="Club Wines | Members Drink Better">
+<meta property="og:description" content="Estate grown sparkling rosé in a 12 oz can, with your club's crest on the label. Poured all year, everywhere at the club that glass cannot go.">
+<meta property="og:image" content="https://getclubwines.com/sc-pool.jpg">
+<meta property="og:url" content="https://getclubwines.com/">
+<link rel="canonical" href="https://getclubwines.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F7F3EB'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23A6894A' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='24.5' fill='none' stroke='%23A6894A' stroke-width='1'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%231B3022'%3ECW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,63 +61,59 @@ input,select,textarea{caret-color:var(--gold)}
 a{text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 #hero-title:focus-visible{outline:none}
-.clubs :focus-visible,footer :focus-visible{outline-color:var(--gold-on-dark)}
+.hero :focus-visible,.clubs :focus-visible,footer :focus-visible{outline-color:var(--gold-on-dark)}
+/* a class that sets display must never resurrect a [hidden] element */
+[hidden]{display:none!important}
 
 
-/* ————— MASTHEAD : one label, every club ————— */
-.masthead{background:var(--obsidian);color:var(--linen);
-  padding:clamp(30px,4.4vh,48px) 24px clamp(26px,4vh,40px);
-  border-bottom:1px solid rgba(166,137,74,.34);position:relative;overflow:hidden}
-.masthead::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 8%,rgba(201,164,90,.16),transparent 62%)}
-.mh-inner{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.mh-wordmark{font-family:var(--serif);font-weight:700;color:var(--linen);
-  font-size:clamp(19px,2.2vw,24px);letter-spacing:.26em;text-indent:.26em;margin-bottom:12px}
-.mh-kicker{font-size:13.5px;font-style:italic;letter-spacing:.03em;
-  color:rgba(247,243,235,.78);margin-bottom:clamp(16px,2.4vh,24px)}
+/* ————— HERO : the rule, the can, the crest ————— */
+.hero{background:var(--obsidian);color:var(--linen);position:relative;overflow:hidden;
+  padding:0 0 calc(clamp(56px,8vh,96px) + 64px);border-bottom:1px solid rgba(166,137,74,.34)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(80% 85% at 78% 42%,rgba(201,164,90,.15),transparent 64%)}
+.hero .shell{position:relative;z-index:1}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:clamp(28px,4.4vh,42px) 0 clamp(34px,6vh,64px)}
+.topbar .wordmark{font-family:var(--serif);font-weight:700;color:var(--linen);
+  font-size:clamp(17px,1.6vw,20px);letter-spacing:.26em;white-space:nowrap}
+.topbar nav{display:flex;gap:clamp(4px,1.4vw,20px)}
+.topbar nav a{color:rgba(247,243,235,.82);font-family:var(--sans);font-weight:600;font-size:12px;
+  letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  border-bottom:1px solid transparent;padding:13px 6px;transition:border-color .25s ease,color .25s ease}
+.topbar nav a:hover{color:var(--linen);border-color:var(--gold-on-dark)}
+.hgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:clamp(32px,5vw,72px);align-items:center}
+.hero .eyebrow{color:var(--gold-on-dark);margin-bottom:clamp(18px,2.6vh,26px);line-height:1.7}
+.hero h1{font-family:var(--serif);font-weight:400;
+  font-size:clamp(38px,5vw,68px);line-height:1.06;letter-spacing:-.006em;
+  max-width:14ch;text-wrap:balance}
+.hero h1 em{display:block;font-style:italic;color:var(--rose)}
+.hero .rule{width:190px;margin:clamp(24px,3.6vh,34px) 0}
+.hero .sub{font-size:clamp(17px,1.5vw,20px);color:rgba(247,243,235,.82);
+  max-width:46ch;margin-bottom:clamp(28px,4vh,40px)}
+.hero .note{margin-top:16px;color:rgba(247,243,235,.72);font-size:14px;font-style:italic}
 
-.mh-stage{position:relative;width:clamp(210px,27vw,292px);aspect-ratio:1;margin:0 auto;
-  background:none;border:0;padding:0;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
-.mh-stage:focus-visible{outline:2px solid var(--gold-on-dark);outline-offset:9px;border-radius:50%}
-.mh-frame{position:absolute;inset:0;width:100%;height:100%;
-  animation:mhspin 90s linear infinite}
-.mh-stage:hover .mh-frame{animation-play-state:paused}
-@keyframes mhspin{to{transform:rotate(360deg)}}
-.mh-disc{position:absolute;left:50%;top:50%;width:76%;height:auto;border-radius:50%;
-  transform:translate(-50%,-50%);
-  box-shadow:0 18px 46px -18px rgba(0,0,0,.75);
-  animation:mhland .66s cubic-bezier(.2,1.25,.4,1) both}
-@keyframes mhland{
-  0%  {opacity:0;transform:translate(-50%,-50%) scale(.86) rotate(-8deg)}
-  60% {opacity:1}
-  78% {transform:translate(-50%,-50%) scale(1.025) rotate(1.2deg)}
-  100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}
-}
-.mh-stage:hover .mh-disc{box-shadow:0 20px 54px -16px rgba(0,0,0,.8),0 0 0 1px rgba(201,164,90,.5)}
-
-.mh-kick2{font-size:10.5px;letter-spacing:.3em;color:rgba(247,243,235,.7);
-  margin:clamp(18px,2.6vh,26px) 0 8px}
-.mh-name{font-family:var(--serif);font-weight:400;
-  font-size:clamp(25px,4.2vw,40px);line-height:1.12;letter-spacing:-.008em;
+/* the can is the argument: one label, a different crest every few seconds */
+.hcan{display:flex;flex-direction:column;align-items:center;text-align:center}
+.hstage{display:block;width:min(100%,360px);background:none;border:0;padding:0;
+  font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.hstage:focus-visible{outline:2px solid var(--gold-on-dark);outline-offset:8px}
+.hstage .canplate{display:block;width:100%;transition:box-shadow .3s ease}
+.hstage .canframe{display:block}
+.hstage:hover .canplate{box-shadow:0 20px 34px rgba(0,0,0,.42)}
+.hfor{color:rgba(247,243,235,.72);margin:clamp(20px,3vh,28px) 0 6px}
+.hname{font-family:var(--serif);font-weight:400;
+  font-size:clamp(23px,2.5vw,31px);line-height:1.15;letter-spacing:-.004em;
   color:var(--linen);transition:opacity .26s ease;min-height:1.15em}
-.mh-dia{display:block;width:6px;height:6px;transform:rotate(45deg);
-  background:var(--gold-on-dark);margin:16px auto 0}
+.hcan .hnote{margin-top:12px;font-size:13px;font-style:italic;color:rgba(247,243,235,.72)}
 
-
-.mh-ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-  gap:clamp(12px,2vw,24px);margin-top:30px}
 .btn.light{background:var(--linen);color:var(--obsidian);border-color:var(--linen)}
 .btn.light:hover{background:#fff;border-color:#fff}
 .btn2.light{color:var(--linen);border-bottom-color:var(--gold-on-dark)}
 .btn2.light:hover{color:var(--gold-on-dark);border-bottom-color:var(--rose)}
-.mh-note{font-size:13px;letter-spacing:.03em;color:rgba(247,243,235,.72);margin-top:22px}
 @media (max-width:640px){
-  .mh-inner{padding:0 2px}
-  .mh-kicker{font-size:12.5px}
-}
-@media (prefers-reduced-motion:reduce){
-  .mh-frame{animation:none}
-  .mh-disc{animation:none}
+  .topbar{justify-content:center}
+  .topbar nav{display:none}
 }
 .gilt{position:fixed;top:0;left:0;right:0;height:5px;z-index:40;
   background:linear-gradient(90deg,#C99C9C,#E6B8B8 30%,#EEC6C4 50%,#E6B8B8 70%,#C99C9C);
@@ -143,24 +140,45 @@ a{text-underline-offset:3px}
 }
 
 /* ————— age gate ————— */
+/* the gate is the release notice: one plaque, shown before anyone enters, that also asks the age question */
 #gate{
-  position:fixed;inset:0;z-index:60;background:var(--linen);
-  display:flex;align-items:center;justify-content:center;text-align:center;
+  position:fixed;inset:0;z-index:60;background:var(--obsidian);
+  display:flex;text-align:center;padding:20px;overflow:auto;
   transition:opacity .5s ease;
 }
+#gate::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(72% 62% at 50% 44%,rgba(201,164,90,.2),transparent 70%)}
 #gate.closing{opacity:0;pointer-events:none}
-#gate .inner{max-width:420px;padding:0 24px}
-#gate .medallion{width:92px;margin:0 auto 26px}
+#gate .inner{
+  position:relative;margin:auto;width:100%;max-width:520px;
+  padding:clamp(32px,5vh,50px) clamp(24px,5vw,52px) clamp(22px,3vh,32px);
+  background:#FDFBF4;border:1px solid rgba(201,164,90,.6);
+  box-shadow:0 44px 80px -26px rgba(0,0,0,.7),0 10px 22px rgba(0,0,0,.28);
+  animation:gatepop .75s cubic-bezier(.2,1.15,.4,1) both;
+}
+#gate .inner::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,164,90,.42);pointer-events:none}
+/* transform only: the plaque is never invisible, even if the animation does not run */
+@keyframes gatepop{from{transform:translateY(28px) scale(.96)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){#gate .inner{animation:none}}
+@media (max-height:700px){
+  #gate{padding:12px}
+  #gate .inner{padding-top:24px;padding-bottom:16px}
+  #gate .medallion{width:52px!important;margin-bottom:12px!important}
+  #gate .decline{margin-top:10px!important}
+}
+#gate .medallion{width:70px;margin:0 auto 18px}
 #gate .wordmark{
-  font-family:var(--serif);font-weight:700;font-size:30px;
-  letter-spacing:.22em;text-indent:.22em;margin-bottom:22px;
+  font-family:var(--serif);font-weight:700;font-size:clamp(22px,3vw,26px);
+  letter-spacing:.22em;text-indent:.22em;margin-bottom:18px;
 }
-#gate .rule{width:180px;margin:0 auto 26px}
+#gate .rule{width:180px;margin:0 auto 22px}
 #gate h2{
-  font-family:var(--serif);font-weight:400;font-size:19px;
-  letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;
+  font-family:var(--serif);font-weight:400;font-size:clamp(27px,4.4vw,36px);
+  line-height:1.14;letter-spacing:.004em;margin-bottom:12px;text-wrap:balance;
 }
-#gate p{color:var(--ink-soft);font-size:16px;margin-bottom:34px}
+#gate h2 em{font-style:italic;color:var(--rose-ink)}
+#gate p{color:var(--ink-soft);font-size:16px;margin-bottom:22px}
+#gate .gage{font-size:15px;margin:22px 0 20px;padding-top:20px;border-top:1px solid rgba(166,137,74,.4)}
 #gate .enter{
   display:inline-block;background:var(--obsidian);color:var(--linen);
   font-family:var(--sans);font-weight:600;font-size:13px;
@@ -219,26 +237,7 @@ section{position:relative}
   #gate{transition:none}
 }
 
-/* ————— hero ————— */
-.hero{padding:clamp(48px,7vh,84px) 0 clamp(64px,9vh,110px)}
-.hero .shell{
-  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
-  gap:clamp(32px,5vw,72px);align-items:center;
-}
-.hero .eyebrow{color:var(--gold-text);margin-bottom:clamp(18px,2.5vh,26px)}
-.hero h1{
-  font-family:var(--serif);font-weight:700;
-  font-size:clamp(52px,7.2vw,96px);
-  line-height:.98;letter-spacing:.015em;text-transform:uppercase;
-}
-.hero h1 .b{display:block}
-.hero h1 .accent{color:var(--gold);font-style:italic;text-transform:none;
-  font-weight:400;letter-spacing:0;font-size:.92em}
-.hero .rule{width:190px;margin:clamp(26px,4vh,38px) 0}
-.hero .sub{
-  font-size:clamp(17px,1.5vw,20px);color:var(--ink-soft);
-  max-width:44ch;margin-bottom:clamp(30px,4.5vh,44px);
-}
+/* ————— buttons ————— */
 .btn{
   display:inline-block;background:var(--obsidian);color:var(--linen);
   font-family:var(--sans);font-weight:600;font-size:13px;
@@ -255,112 +254,71 @@ section{position:relative}
   transition:border-color .25s ease,color .25s ease;
 }
 .btn2:hover{color:var(--gold-deep);border-color:var(--rose-ink)}
-.hero .note{
-  margin-top:16px;color:var(--ink-soft);font-size:14px;font-style:italic;
+/* ————— release notice : a plaque hung across the seam between the hero and the page ————— */
+.notice{position:relative;z-index:3;max-width:860px;margin:-64px auto 0;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(22px,3.4vw,44px);align-items:center;
+  padding:clamp(28px,3.4vw,40px) clamp(26px,4vw,50px);
+  background:#FDFBF4;border:1px solid rgba(201,164,90,.6);
+  box-shadow:0 26px 44px -20px rgba(20,37,25,.5),0 5px 12px rgba(20,37,25,.12)}
+.notice::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,164,90,.42);pointer-events:none}
+.notice .nlab{color:var(--gold-text);margin-bottom:10px}
+.notice .nhead{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.7vw,33px);
+  line-height:1.14;letter-spacing:.004em;text-wrap:balance}
+.notice .nhead em{font-style:italic;color:var(--rose-ink)}
+.notice .nside{border-left:1px solid rgba(166,137,74,.4);padding-left:clamp(22px,3.4vw,44px)}
+.notice .nbody{color:var(--ink-soft);font-size:16px;line-height:1.6}
+.notice .btn2{padding:14px 2px 10px;margin-top:6px}
+@media (max-width:760px){
+  .notice{grid-template-columns:1fr;gap:16px;margin-top:-48px}
+  .notice .nside{border-left:0;padding-left:0;border-top:1px solid rgba(166,137,74,.4);padding-top:16px}
 }
-.hero .bannerwrap{display:flex;flex-direction:column;align-items:center}
-.brod{
-  width:min(100%,340px);height:1px;flex:none;
-  background:linear-gradient(90deg,transparent,var(--gold) 10%,var(--gold) 90%,transparent);
-}
-.banner{
-  position:relative;width:min(100%,300px);aspect-ratio:300/430;
-  transform-origin:50% 0;cursor:pointer;
-  background:none;border:0;padding:0;font:inherit;color:inherit;display:block;
-  filter:drop-shadow(0 14px 22px rgba(27,48,34,.18));
-}
-.bfield{position:absolute;inset:0;width:100%;height:100%;display:block}
-.bcontent{
-  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
-  padding:11% 12% 25%;text-align:center;
-}
-.bmark{width:31%;height:auto;display:block;margin-bottom:6%}
-.brule{width:38%;height:1px;background:rgba(201,164,90,.55);display:block;margin-bottom:7%}
-.bname{
-  font-family:var(--serif);font-weight:700;
-  font-size:clamp(21px,2.3vw,28px);line-height:1.15;
-  letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;
-  color:var(--linen);
-}
-.bscript{
-  font-family:var(--serif);font-style:italic;font-weight:400;
-  font-size:clamp(14px,1.5vw,18px);letter-spacing:.04em;
-  color:var(--rose);margin-top:5%;
-}
-.bdia{
-  width:7px;height:7px;background:var(--rose);transform:rotate(45deg);
-  display:block;margin:8% 0 auto;flex:none;
-}
-.bwordmark{
-  font-family:var(--sans);font-weight:600;
-  font-size:clamp(9px,1.05vw,11.5px);letter-spacing:.24em;text-indent:.24em;
-  text-transform:uppercase;color:var(--gold-on-dark);
-}
-.bannerwrap .note{text-align:center;margin-top:24px;max-width:34ch}
-.banner:hover{filter:drop-shadow(0 18px 28px rgba(27,48,34,.24))}
-.banner:focus-visible{outline:2px solid var(--gold-deep);outline-offset:6px}
+#gate .release{color:var(--gold-text);font-size:12px;margin:0 0 10px}
 
-/* the banner is hung, then settles */
-.bannerwrap.in .banner{animation:bhang 1.5s cubic-bezier(.22,1.1,.36,1) .15s both}
-.bannerwrap.in .brod{animation:brod .7s cubic-bezier(.16,1,.3,1) both}
-@keyframes brod{from{opacity:0;transform:scaleX(.2)}to{opacity:1;transform:none}}
-@keyframes bhang{
-  0%{opacity:0;transform:translateY(-18px) rotate(0deg)}
-  35%{opacity:1;transform:translateY(0) rotate(1.4deg)}
-  62%{transform:rotate(-.85deg)}
-  82%{transform:rotate(.35deg)}
-  100%{transform:rotate(0deg)}
-}
-@media (prefers-reduced-motion:reduce){
-  .bannerwrap.in .banner,.bannerwrap.in .brod{animation:none}
-}
-
-/* ————— statement ————— */
-.statement{background:var(--obsidian);color:var(--linen);padding:clamp(84px,12vh,140px) 0;text-align:left;position:relative}
-.statement::before{content:"";position:absolute;inset:14px;border:1px solid rgba(247,243,235,.12);pointer-events:none}
+/* ————— statement : where the can goes (light, so it separates the hero from the clubs plate) ————— */
+/* the 1px top padding stops the plaque's negative margin collapsing into the section, which would drag the light background up over the hero */
+.statement{background:var(--linen-warm);color:var(--obsidian);padding:1px 0 clamp(76px,11vh,128px);text-align:left;position:relative}
+.statement .sgrid{padding-top:clamp(64px,9vh,104px)}
 .sgrid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(36px,5vw,72px);align-items:center}
 .statement .big{
   font-family:var(--serif);font-style:italic;font-weight:400;
-  font-size:clamp(30px,4.4vw,58px);line-height:1.16;letter-spacing:.005em;
+  font-size:clamp(30px,4.2vw,54px);line-height:1.16;letter-spacing:.005em;
   max-width:17ch;margin:0 0 clamp(28px,4vh,38px);
 }
-.statement .big em{font-style:italic;color:var(--rose)}
+.statement .big em{display:block;font-style:italic;color:var(--rose-ink)}
 .statement .rule{width:210px;margin:0 0 clamp(24px,3.5vh,32px)}
-.statement .quiet{color:rgba(247,243,235,.72);max-width:44ch;margin:0;font-size:clamp(16px,1.4vw,18px)}
+.statement .quiet{color:var(--ink-soft);max-width:44ch;margin:0;font-size:clamp(16px,1.4vw,18px)}
 .venuebox{display:flex;flex-direction:column}
 .venues{display:flex;flex-direction:column}
 .vrow{
   display:flex;align-items:baseline;gap:14px;width:100%;
-  background:none;border:0;border-top:1px solid rgba(247,243,235,.16);
+  background:none;border:0;border-top:1px solid var(--hairline);
   padding:15px 2px;cursor:pointer;text-align:left;font:inherit;
   font-family:var(--serif);font-size:clamp(18px,1.9vw,24px);
-  letter-spacing:.04em;color:rgba(247,243,235,.6);
+  letter-spacing:.04em;color:var(--ink-mute);
   transition:color .3s ease,padding-left .3s cubic-bezier(.16,1,.3,1);
 }
-.vrow:last-of-type{border-bottom:1px solid rgba(247,243,235,.16)}
-.vrow .vn{color:var(--gold-on-dark);font-style:italic;font-size:.7em;flex:none;min-width:1.7em;opacity:.85;transition:opacity .3s ease}
+.vrow:last-of-type{border-bottom:1px solid var(--hairline)}
+.vrow .vn{color:var(--gold-text);font-style:italic;font-size:.7em;flex:none;min-width:1.7em;transition:opacity .3s ease}
 .vrow .vmark{
   margin-left:auto;width:7px;height:7px;flex:none;align-self:center;
-  background:var(--rose);transform:rotate(45deg) scale(0);
+  background:var(--rose-ink);transform:rotate(45deg) scale(0);
   transition:transform .35s cubic-bezier(.16,1,.3,1);
 }
-.vrow:hover{color:rgba(247,243,235,.92);padding-left:8px}
-.vrow.is-on{color:var(--linen);padding-left:8px}
-.vrow.is-on .vn{opacity:1}
+.vrow:hover{color:var(--obsidian);padding-left:8px}
+.vrow.is-on{color:var(--obsidian);padding-left:8px}
 .vrow.is-on .vmark{transform:rotate(45deg) scale(1)}
 
 .vstage{position:relative;margin-top:clamp(22px,3.5vh,32px)}
-.vpanel{background:rgba(247,243,235,.05)}
 .vpanel{position:relative;margin:0}
 .vpanel[hidden]{display:none}
 .vpanel img{
   display:block;width:100%;height:auto;
-  border:1px solid rgba(247,243,235,.22);padding:6px;
-  background:rgba(247,243,235,.06);
+  border:1px solid var(--hairline);padding:6px;
+  background:#EDE6D8;
   animation:vfade .55s cubic-bezier(.16,1,.3,1) both;
 }
 .vpanel figcaption{
-  margin-top:12px;color:rgba(247,243,235,.62);
+  margin-top:12px;color:var(--ink-mute);
   font-family:var(--serif);font-style:italic;font-size:14.5px;
   animation:vfade .55s cubic-bezier(.16,1,.3,1) .06s both;
 }
@@ -448,6 +406,8 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 
 /* ————— article III : membership ————— */
 .member{padding:clamp(70px,10vh,120px) 0;border-top:1px solid var(--hairline-soft);text-align:center;background:var(--linen-warm)}
+.member .lede{font-family:var(--serif);font-style:italic;font-size:clamp(18px,1.8vw,22px);
+  color:var(--ink-soft);max-width:46ch;margin:calc(-1 * clamp(14px,2vw,24px)) auto clamp(36px,5vh,52px)}
 .steps{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:clamp(28px,4vw,56px);max-width:1000px;margin:0 auto clamp(44px,6vh,60px);
@@ -597,6 +557,11 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 /* ————— article V : application ————— */
 .apply{padding:clamp(80px,11vh,130px) 0}
 .apply .paper{max-width:680px;margin:0 auto}
+/* narrow column: the title gets the room, the Article label is dropped here */
+.apply .article-head{margin-bottom:clamp(28px,4vh,40px)}
+.apply .article-head h2{font-size:clamp(26px,3vw,34px);text-wrap:balance}
+.apply .article-head .no{font-size:clamp(40px,5vw,60px)}
+.apply .article-head .lab{display:none}
 .modeswitch{display:grid;grid-template-columns:1fr 1fr;gap:14px;
   margin:clamp(24px,3.5vh,34px) auto 0;max-width:640px}
 .modeswitch .m-t{display:block;font-family:var(--serif);font-weight:700;font-size:18px;
@@ -643,7 +608,8 @@ footer nav a:hover{color:var(--linen);border-color:var(--gold)}
 .field.bad .err{display:block}
 .checkbox-field{grid-column:1/-1}
 .checkbox-field .checkbox{display:flex;align-items:flex-start;gap:12px;cursor:pointer;
-  font-family:var(--sans);font-size:15px;color:var(--obsidian);line-height:1.5}
+  font-family:var(--sans);font-weight:400;font-size:15.5px;color:var(--obsidian);line-height:1.5;
+  text-transform:none;letter-spacing:0;margin-bottom:0}
 .checkbox-field input[type=checkbox]{appearance:none;-webkit-appearance:none;width:20px;height:20px;
   flex:0 0 20px;border:1px solid var(--hairline);border-radius:2px;margin-top:2px;position:relative;
   cursor:pointer;transition:border-color .2s ease,background-color .2s ease}
@@ -700,12 +666,11 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
 
 /* ————— responsive ————— */
 @media (max-width:900px){
-  .hero .shell,.clubs .shell{grid-template-columns:1fr}
-  .hero{padding-top:36px}
-  .hero .bannerwrap{order:-1;margin-bottom:14px}
-  .banner{width:min(62vw,270px)}
-  .brod{width:min(66vw,290px)}
-  .hero .rule{margin-left:0}
+  .hgrid,.clubs .shell{grid-template-columns:1fr}
+  .hgrid{gap:44px}
+  .hero::after{background:radial-gradient(95% 46% at 50% 74%,rgba(201,164,90,.15),transparent 66%)}
+  .hero h1{max-width:16ch}
+  .hstage{width:min(78vw,330px)}
   .roll{margin:0;max-width:460px}
   .sgrid{grid-template-columns:1fr;gap:40px}
   .wine .duo{grid-template-columns:1fr;gap:40px}
@@ -729,8 +694,10 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     </svg>
     <div class="wordmark">CLUB&nbsp;WINES</div>
     <div class="rule" aria-hidden="true"><span class="dia"></span></div>
-    <h2>Members only.</h2>
-    <p>This is a wine club. You must be 21 or older to enter.</p>
+    <p class="release smallcaps">Release notice</p>
+    <h2>The debut run releases <em>early&nbsp;2027.</em></h2>
+    <p>It is a small run, and founding clubs come first.</p>
+    <p class="gage">Members only. You must be 21 or older to enter.</p>
     <button class="enter" id="enterBtn">I am 21 or older</button>
     <a class="decline" href="https://www.responsibility.org" target="_blank" rel="noopener noreferrer">Not yet</a>
   </div>
@@ -738,105 +705,70 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
 
 
 
-<!-- ————— MASTHEAD ————— -->
-<section class="masthead" aria-labelledby="mh-h">
-  <div class="mh-inner">
-    <h2 class="vh" id="mh-h">The same wine under every club’s crest</h2>
-    <p class="mh-wordmark">CLUB&nbsp;WINES</p>
-    <p class="mh-kicker">Your crest belongs on more than the blazer.</p>
-
-    <button type="button" class="mh-stage" id="mhStage" aria-label="Show the next club crest on the label">
-      <svg class="mh-frame" viewBox="0 0 400 400" aria-hidden="true">
-        <defs>
-          <linearGradient id="mgold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#8F7238"/><stop offset=".34" stop-color="#C9A45A"/>
-            <stop offset=".62" stop-color="#EBD6A0"/><stop offset="1" stop-color="#8F7238"/>
-          </linearGradient>
-        </defs>
-        <circle cx="200" cy="200" r="197" fill="none" stroke="#A6894A" stroke-width=".9" opacity=".46"/>
-        <circle cx="200" cy="200" r="187" fill="none" stroke="url(#mgold)" stroke-width="2.2"/>
-        <g fill="url(#mgold)">
-          <rect x="196" y="4" width="8" height="8" transform="rotate(45 200 8)"/>
-          <rect x="196" y="388" width="8" height="8" transform="rotate(45 200 392)"/>
-          <rect x="4" y="196" width="8" height="8" transform="rotate(45 8 200)"/>
-          <rect x="388" y="196" width="8" height="8" transform="rotate(45 392 200)"/>
-        </g>
-      </svg>
-      <img class="mh-disc" id="mhDisc" src="disc-oak.webp" alt="" role="presentation"
-           width="440" height="440" decoding="async">
-    </button>
-
-    <p class="mh-kick2 smallcaps">Canned exclusively for</p>
-    <p class="mh-name" id="mhName">Oakhaven Country Club</p>
-    <span class="mh-dia" aria-hidden="true"></span>
-
-    <div class="mh-ctas">
-      <a class="btn light" href="#application" data-mode="member">Apply for Membership</a>
-      <a class="btn2 light" href="#application" data-mode="club">Put your crest on the can</a>
-    </div>
-  </div>
-</section>
-
 <main>
 
-<!-- ————— HERO ————— -->
-<section class="hero">
+<!-- ————— HERO : written for the club buyer ————— -->
+<section class="hero" aria-labelledby="hero-title">
   <div class="shell">
-    <div>
-      <h1 class="reveal" id="hero-title" tabindex="-1" style="--d:.08s">
-        <span class="b">Country</span>
-        <span class="b">Club</span>
-        <span class="b accent">wines.</span>
-      </h1>
-      <div class="rule reveal" style="--d:.16s" aria-hidden="true"><span class="dia"></span></div>
-      <p class="eyebrow smallcaps reveal" style="--d:.19s">Estate Sparkling Rosé&nbsp;&nbsp;·&nbsp;&nbsp;Canned for Clubs</p>
-      <p class="sub reveal" style="--d:.22s">Estate sparkling rosé, made for the member guest, the 19th hole, and the pool deck. Founding membership is now open for application.</p>
-      <div class="reveal" style="--d:.3s">
-        <div class="ctas">
-          <a class="btn" href="#application" data-mode="member">Apply for Membership</a>
-          <a class="btn2" href="#for-clubs">For Clubs</a>
+    <header class="topbar">
+      <p class="wordmark">CLUB&nbsp;WINES</p>
+      <nav aria-label="Primary">
+        <a href="#for-clubs">For Clubs</a>
+        <a href="#the-wine">The Wine</a>
+        <a href="#membership">Membership</a>
+      </nav>
+    </header>
+    <div class="hgrid">
+      <div>
+        <p class="eyebrow smallcaps reveal" style="--d:.05s">For general managers, F&amp;B directors, and golf professionals</p>
+        <h1 class="reveal" id="hero-title" tabindex="-1" style="--d:.1s">Glass is banned where <em>your members gather.</em></h1>
+        <div class="rule linen reveal" style="--d:.16s" aria-hidden="true"><span class="dia"></span></div>
+        <p class="sub reveal" style="--d:.2s">Estate sparkling rosé in a 12&nbsp;oz can, with your club’s crest on the label. Poured all year, from the pool deck and the member guest to the paddle courts and the holiday party.</p>
+        <div class="reveal" style="--d:.28s">
+          <div class="ctas">
+            <a class="btn light" href="#application" data-mode="club">Request the club kit</a>
+            <a class="btn2 light" href="#membership">I belong to a club</a>
+          </div>
+          <p class="note">Inquiries answered within two business days.</p>
         </div>
-        <p class="note">The committee reviews applications monthly.</p>
       </div>
-    </div>
-    <div class="bannerwrap reveal" style="--d:.14s">
-      <span class="brod" aria-hidden="true"></span>
-      <div class="banner" id="clubBanner" role="img"
-           aria-label="A hanging club banner bearing the Club Wines monogram.">
-        <svg class="bfield" viewBox="0 0 300 430" aria-hidden="true">
-          <defs>
-            <linearGradient id="bgold" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#8F7238"/><stop offset=".32" stop-color="#C9A45A"/>
-              <stop offset=".58" stop-color="#EBD6A0"/><stop offset="1" stop-color="#8F7238"/>
-            </linearGradient>
-          </defs>
-          <path d="M0 0 H300 V368 L150 430 L0 368 Z" fill="#1B3022"/>
-          <path d="M11 11 H289 V361 L150 418 L11 361 Z" fill="none" stroke="url(#bgold)" stroke-width="2"/>
-          <path d="M18 18 H282 V356 L150 410 L18 356 Z" fill="none" stroke="#A6894A" stroke-width=".8" opacity=".42"/>
-        </svg>
-        <div class="bcontent">
-          <img class="bmark" src="logo-cw-light.png" alt="" width="240" height="240" decoding="async">
-          <span class="brule" aria-hidden="true"></span>
-          <span class="bname">Club Wines</span>
-          <span class="bscript">estate sparkling ros&eacute;</span>
-          <span class="bdia" aria-hidden="true"></span>
-          <span class="bwordmark">Members drink better.</span>
-        </div>
+      <div class="hcan reveal" style="--d:.14s">
+        <button type="button" class="hstage" id="mhStage" aria-label="Show the next club crest on the can">
+          <span class="canplate"><span class="canframe">
+            <img class="canshot" src="can-blank.jpg" alt="" width="620" height="793" fetchpriority="high" decoding="async">
+            <img class="crestlayer" src="disc-oak.webp" alt="" width="220" height="220" decoding="async">
+          </span></span>
+        </button>
+        <p class="hfor smallcaps">Canned exclusively for</p>
+        <p class="hname" id="mhName">Elder Oak Country Club</p>
+        <p class="hnote">Shown with illustrative crests.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ————— THE RULE ————— -->
+<!-- ————— WHERE THE CAN GOES ————— -->
 <section class="statement">
+  <div class="shell">
+    <aside class="notice reveal" aria-labelledby="notice-h">
+      <div>
+        <p class="smallcaps nlab">Release notice</p>
+        <h2 class="nhead" id="notice-h">The debut run releases <em>early&nbsp;2027.</em></h2>
+      </div>
+      <div class="nside">
+        <p class="nbody">It is a small run, and founding clubs come first. Tee gifts for the 2027 season are decided this winter.</p>
+        <a class="btn2" href="#application" data-mode="club">Request the club kit &rarr;</a>
+      </div>
+    </aside>
+  </div>
   <div class="shell sgrid">
     <div>
       <h2 class="vh">Where the can goes</h2>
-      <p class="big reveal">Glass is banned at the pool, on the course, and on&nbsp;the&nbsp;courts.</p>
-      <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
-      <p class="quiet reveal">Which is exactly where a club pours its summer. The wine list stays in the clubhouse. The can goes everywhere it cannot.</p>
-      <p class="reveal" style="margin-top:30px"><a class="btn2 light" href="#application" data-mode="member">Apply for Membership &rarr;</a></p>
+      <p class="big reveal">The wine list stays in the clubhouse. <em>The can goes everywhere it&nbsp;cannot.</em></p>
+      <div class="rule reveal" aria-hidden="true"><span class="dia"></span></div>
+      <p class="quiet reveal">No glass by the water, on the turf, beside the courts, or around the fire pit. Those are the places your members gather in every season, and the places a bottle cannot follow.</p>
+      <p class="reveal" style="margin-top:30px"><a class="btn2" href="#for-clubs">See your crest on the can &rarr;</a></p>
     </div>
 
     <div class="venuebox reveal">
@@ -853,7 +785,7 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
       </div>
       <div class="vstage">
         <figure class="vpanel is-on" role="tabpanel" id="vp-pool" tabindex="0" aria-labelledby="vt-pool">
-          <img src="sc-pool.jpg" alt="A Club Wines can beaded with condensation on the teak arm of a lounge chair beside a country club pool" width="1000" height="1000" fetchpriority="high" decoding="async">
+          <img src="sc-pool.jpg" alt="A Club Wines can beaded with condensation on the teak arm of a lounge chair beside a country club pool" width="1000" height="1000" decoding="async">
           <figcaption>Poolside service, where the glass ban is absolute.</figcaption>
         </figure>
         <figure class="vpanel" role="tabpanel" id="vp-course" tabindex="0" aria-labelledby="vt-course" hidden>
@@ -870,14 +802,54 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
 
 </section>
 
-<!-- ————— ARTICLE I : THE WINE ————— -->
-<section class="wine">
+<!-- ————— ARTICLE I : FOR CLUBS ————— -->
+<section class="clubs" id="for-clubs">
+  <div class="shell">
+    <div>
+      <h2 class="reveal"><span class="no" aria-hidden="true">I.</span>Your crest. <em>Our rosé.</em></h2>
+      <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
+      <p class="reveal">For the general manager, the F&amp;B director, and the golf professional planning the member guest. The same estate rosé, canned exclusively for your club, with your crest on the front.</p>
+      <ol class="ops reveal" data-stagger>
+        <li><span class="opn">i.</span><span class="opt">Pours where bottles cannot go.</span><span class="opd">Pool deck, halfway house, cart service, courts. No glass, no stemware, no barback.</span></li>
+        <li><span class="opn">ii.</span><span class="opt">Your crest is the label.</span><span class="opd">Member guest, tee gifts, tournament tables, the pro shop cooler. It reads as club merchandise, not vendor stock.</span></li>
+        <li><span class="opn">iii.</span><span class="opt">Nothing goes down the drain.</span><span class="opd">Single serve, shelf stable, no cellar space and no half bottles written off at close.</span></li>
+        <li><span class="opn">iv.</span><span class="opt">One wine, one SKU, one invoice.</span><span class="opd">Estate grown and canned in California. Case counts and lead times sent with the kit.</span></li>
+      </ol>
+      <a class="btn ghost reveal" href="#application" data-mode="club">Request the club kit</a>
+      <p class="inq reveal">Crest mockup, case counts, and lead times.</p>
+    </div>
+    <div class="proof reveal">
+      <figure class="canstage">
+        <div class="canplate"><div class="canframe">
+          <img class="canshot" src="can-blank.jpg" alt="A Club Wines can with an empty crest medallion, ready for a club mark" width="620" height="793" decoding="async">
+          <img class="crestlayer" src="disc-oak.webp" alt="" role="presentation" width="220" height="220" decoding="async">
+        </div></div>
+        <figcaption id="proofCap" aria-live="polite">Elder Oak Country Club</figcaption>
+      </figure>
+
+      <div class="roll" role="group" aria-label="Preview a crest on the can">
+        <p class="roll-head smallcaps" id="roll-head">Put a crest on the can</p>
+        <div class="rollpick">
+          <button type="button" class="prow is-on" data-crest="oak"     data-cap="Elder Oak Country Club"     aria-pressed="true"><span class="rn">i.</span>Elder Oak Country Club</button>
+          <button type="button" class="prow" data-crest="willow"  data-cap="Willowfield Country Club"   aria-pressed="false"><span class="rn">ii.</span>Willowfield Country Club</button>
+          <button type="button" class="prow" data-crest="racquet" data-cap="Summit Hollow Country Club" aria-pressed="false"><span class="rn">iii.</span>Summit Hollow Country Club</button>
+          <button type="button" class="prow" data-crest="quail"   data-cap="Covey Lake Country Club"    aria-pressed="false"><span class="rn">iv.</span>Covey Lake Country Club</button>
+          <button type="button" class="prow yours" data-crest="yours" data-cap="Your club" aria-pressed="false"><span class="rn">v.</span>Your club<span class="status">open</span></button>
+        </div>
+        <p class="roll-note">Illustrative crests. Yours would be the first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ————— ARTICLE II : THE WINE ————— -->
+<section class="wine" id="the-wine">
   <div class="shell">
     <header class="article-head reveal">
-      <span class="no" aria-hidden="true">I.</span>
+      <span class="no" aria-hidden="true">II.</span>
       <h2>The wine</h2>
       <span class="tail" aria-hidden="true"></span>
-      <span class="lab smallcaps">Article I</span>
+      <span class="lab smallcaps">Article II</span>
     </header>
     <div class="duo">
     <ul class="declare reveal" data-stagger>
@@ -915,66 +887,25 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
       <figcaption>The estate&nbsp;&nbsp;&#183;&nbsp;&nbsp;Element 79 Vineyards, Fairplay, California</figcaption>
     </figure>
     <div class="reveal" style="margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2vw,26px)">
-      <a class="btn" href="#application" data-mode="member">Apply for Membership</a>
-      <a class="btn2" href="#for-clubs">Bring it to your club</a>
+      <a class="btn" href="#application" data-mode="club">Request the club kit</a>
+      <a class="btn2" href="#membership">For members</a>
     </div>
   </div>
 
 </section>
 
 
-
-<!-- ————— ARTICLE II : FOR CLUBS ————— -->
-<section class="clubs" id="for-clubs">
-  <div class="shell">
-    <div>
-      <h2 class="reveal"><span class="no" aria-hidden="true">II.</span>Your crest. <em>Our rosé.</em></h2>
-      <div class="rule linen reveal" aria-hidden="true"><span class="dia"></span></div>
-      <p class="reveal">For the food and beverage director who has to serve wine where glass is not allowed. The same estate rosé, canned exclusively for your club, with your crest on the front.</p>
-      <ol class="ops reveal" data-stagger>
-        <li><span class="opn">i.</span><span class="opt">Pours where bottles cannot go.</span><span class="opd">Pool deck, halfway house, cart service, courts. No glass, no stemware, no barback.</span></li>
-        <li><span class="opn">ii.</span><span class="opt">Your crest is the label.</span><span class="opd">Member guest, tee gifts, tournament tables, the pro shop cooler. It reads as club merchandise, not vendor stock.</span></li>
-        <li><span class="opn">iii.</span><span class="opt">Nothing goes down the drain.</span><span class="opd">Single serve, shelf stable, no cellar space and no half bottles written off at close.</span></li>
-        <li><span class="opn">iv.</span><span class="opt">One wine, one SKU, one invoice.</span><span class="opd">Estate grown and canned in California. Case counts and lead times sent with the kit.</span></li>
-      </ol>
-      <a class="btn ghost reveal" href="#application" data-mode="club">Request the club kit</a>
-      <p class="inq reveal">Crest mockup, case counts, and lead times.</p>
-    </div>
-    <div class="proof reveal">
-      <figure class="canstage">
-        <div class="canplate"><div class="canframe">
-          <img class="canshot" src="can-blank.jpg" alt="A Club Wines can with an empty crest medallion, ready for a club mark" width="620" height="793" decoding="async">
-          <img class="crestlayer" id="crestLayer" src="disc-oak.webp" alt="" role="presentation" width="220" height="220" decoding="async">
-        </div></div>
-        <figcaption id="proofCap" aria-live="polite">Oakhaven Country Club</figcaption>
-      </figure>
-
-      <div class="roll" role="group" aria-label="Preview a crest on the can">
-        <p class="roll-head smallcaps" id="roll-head">Put a crest on the can</p>
-        <div class="rollpick">
-          <button type="button" class="prow is-on" data-crest="oak"     data-cap="Oakhaven Country Club"     aria-pressed="true"><span class="rn">i.</span>Oakhaven Country Club</button>
-          <button type="button" class="prow" data-crest="willow"  data-cap="Willow Creek Golf Club"    aria-pressed="false"><span class="rn">ii.</span>Willow Creek Golf Club</button>
-          <button type="button" class="prow" data-crest="racquet" data-cap="Stone Ridge Racquet Club"  aria-pressed="false"><span class="rn">iii.</span>Stone Ridge Racquet Club</button>
-          <button type="button" class="prow" data-crest="book"    data-cap="The Foxglove Book Society" aria-pressed="false"><span class="rn">iv.</span>The Foxglove Book Society</button>
-          <button type="button" class="prow" data-crest="mahjong" data-cap="The Jade Table Club"       aria-pressed="false"><span class="rn">v.</span>The Jade Table Club</button>
-          <button type="button" class="prow" data-crest="quail"   data-cap="Lakeside Hunt Club"        aria-pressed="false"><span class="rn">vi.</span>Lakeside Hunt Club</button>
-          <button type="button" class="prow yours" data-crest="yours" data-cap="Your club" aria-pressed="false"><span class="rn">vii.</span>Your club<span class="status">open</span></button>
-        </div>
-        <p class="roll-note">Illustrative crests. Yours would be the first.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ————— ARTICLE III : MEMBERSHIP ————— -->
-<section class="member">
+<section class="member" id="membership">
   <div class="shell">
     <header class="article-head reveal">
       <span class="no" aria-hidden="true">III.</span>
-      <h2>How membership works</h2>
+      <h2>For members</h2>
       <span class="tail" aria-hidden="true"></span>
       <span class="lab smallcaps">Article III</span>
     </header>
+    <p class="lede reveal">You belong to a club rather than run one. Join the founding list, and put your club forward if you like.</p>
     <div class="plaque reveal">
     <div class="steps">
       <div class="reveal">
@@ -1006,21 +937,21 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     <div class="paper">
       <header class="article-head reveal">
       <span class="no" aria-hidden="true">IV.</span>
-      <h2 id="apply-title">Application for Membership</h2>
+      <h2 id="apply-title">Request the Club Kit</h2>
       <span class="tail" aria-hidden="true"></span>
       <span class="lab smallcaps">Article IV</span>
     </header>
       <div class="modeswitch reveal" role="radiogroup" aria-label="Choose how you are applying">
-        <button type="button" class="mode is-on" id="mode-member" role="radio" aria-checked="true">
+        <button type="button" class="mode is-on" id="mode-club" role="radio" aria-checked="true">
+          <span class="m-t">I run a club</span>
+          <span class="m-d">For GMs, F&amp;B directors, and golf professionals. Get the club kit: your crest on the can, case pricing, lead times.</span>
+        </button>
+        <button type="button" class="mode" id="mode-member" role="radio" aria-checked="false" tabindex="-1">
           <span class="m-t">I belong to a club</span>
           <span class="m-d">Join the founding member list. First cans of the debut run, and you can put your club forward.</span>
         </button>
-        <button type="button" class="mode" id="mode-club" role="radio" aria-checked="false" tabindex="-1">
-          <span class="m-t">I run a club</span>
-          <span class="m-d">For GMs and F&amp;B directors. Get the club kit: your crest on the can, case pricing, lead times.</span>
-        </button>
       </div>
-      <form id="appForm" novalidate class="reveal" aria-label="Application for Membership">
+      <form id="appForm" novalidate class="reveal" aria-labelledby="apply-title">
         <div class="fgrid">
           <div class="field" id="f-name">
             <label for="first_name">First name <span class="req">*</span></label>
@@ -1040,11 +971,11 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
             <span class="err" id="err-state">Shipping wine requires your state.</span>
           </div>
           <div class="field" id="f-club">
-            <label for="clubname" id="club-label">Your club <span class="opt-note">(optional)</span></label>
-            <input type="text" id="clubname" name="clubname" placeholder="e.g. Riviera Country Club" autocomplete="organization" aria-describedby="err-clubname">
+            <label for="clubname" id="club-label">Your club and your title <span class="req">*</span></label>
+            <input type="text" id="clubname" name="clubname" placeholder="e.g. Riviera Country Club, F&amp;B Director" autocomplete="organization" aria-describedby="err-clubname">
             <span class="err" id="err-clubname">The committee will need the club name.</span>
           </div>
-          <div class="field checkbox-field" id="f-sponsor-toggle">
+          <div class="field checkbox-field" id="f-sponsor-toggle" hidden>
             <label class="checkbox">
               <input type="checkbox" id="sponsor_toggle" name="sponsor_toggle">
               <span>I'd like to sponsor my club</span>
@@ -1055,12 +986,12 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
           <p class="sublabel">Tell us who to contact</p>
           <div class="field" id="f-contact-name">
             <label for="contact_name">Who should we contact? <span class="req">*</span></label>
-            <input type="text" id="contact_name" name="contact_name" placeholder="Name and title, e.g. Jane Doe, GM" aria-describedby="err-contact-name">
+            <input type="text" id="contact_name" name="contact_name" placeholder="Name and title, e.g. Jane Doe, GM" aria-required="true" aria-describedby="err-contact-name">
             <span class="err" id="err-contact-name">We need a name to reach out to.</span>
           </div>
           <div class="field" id="f-contact-email">
             <label for="contact_email">Their email <span class="req">*</span></label>
-            <input type="email" id="contact_email" name="contact_email" placeholder="name@club.com" autocomplete="email" aria-describedby="err-contact-email">
+            <input type="email" id="contact_email" name="contact_email" placeholder="name@club.com" autocomplete="off" aria-required="true" aria-describedby="err-contact-email">
             <span class="err" id="err-contact-email">A working email for your contact, please.</span>
           </div>
           <div class="field checkbox-field" id="f-permission">
@@ -1072,8 +1003,8 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
           </div>
         </div>
         <div class="actions">
-          <button type="submit" class="btn" id="submitBtn">Submit Application</button>
-          <p class="privacy" id="privacy-note">We ask your state because shipping wine is a state by state affair. No spam, nothing shared, resign anytime.</p>
+          <button type="submit" class="btn" id="submitBtn">Request the Club Kit</button>
+          <p class="privacy" id="privacy-note">We ask your state because wine licensing is a state by state affair. No spam, nothing shared.</p>
           <p class="senderr" id="senderr" role="alert">Something went wrong on our end. Try once more.</p>
         </div>
       </form>
@@ -1109,8 +1040,9 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
   <div class="wordmark">CLUB&nbsp;WINES</div>
   <div class="rule linen" aria-hidden="true"><span class="dia"></span></div>
   <nav aria-label="Footer">
-    <a href="#application" data-mode="member">Application</a>
     <a href="#for-clubs">For Clubs</a>
+    <a href="#application" data-mode="club">The Club Kit</a>
+    <a href="#membership">Membership</a>
     <a href='other-clubs.html'>The Other Clubs</a>
   </nav>
   <p>Grown, produced and canned by Element 79 Vineyards</p>
@@ -1179,6 +1111,12 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     Array.prototype.forEach.call(list.children, function(li, i){ li.style.setProperty('--i', i); });
   });
   var els = document.querySelectorAll('.reveal');
+  /* the hero is the first screen: it never waits on the observer */
+  var heroIn = function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.hero .reveal'), function(el){ el.classList.add('in'); });
+  };
+  if (window.requestAnimationFrame) requestAnimationFrame(heroIn);
+  setTimeout(heroIn, 300);
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -1212,7 +1150,7 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
   var modeClub = document.getElementById('mode-club');
   var clubName = document.getElementById('clubname');
   var clubLabel = document.getElementById('club-label');
-  var applyMode = 'member';
+  var applyMode = 'club'; /* the club buyer is the primary visitor; the markup ships in club mode */
   function updateClubLabel(){
     var isClub = applyMode === 'club';
     var sponsorOn = !isClub && sponsorToggle && sponsorToggle.checked;
@@ -1324,10 +1262,11 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
       invalid = bad('f-contact-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) || invalid;
       var permBad = !permGiven;
       document.getElementById('f-permission').classList.toggle('bad', permBad);
+      permission.setAttribute('aria-invalid', permBad ? 'true' : 'false');
       invalid = permBad || invalid;
     }
     if (invalid){
-      var firstBad = form.querySelector('.field.bad input:not([hidden]), .field.bad select:not([hidden])');
+      var firstBad = form.querySelector('.field.bad input, .field.bad select');
       if (firstBad) firstBad.focus();
       return;
     }
@@ -1447,56 +1386,43 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
   }
 
 
-  /* the top rail drives the banner and the can */
-  var railBtns = Array.prototype.slice.call(document.querySelectorAll('.rc'));
-  function railSync(key){
-    railBtns.forEach(function(b){
-      var on = b.getAttribute('data-crest') === key;
-      b.classList.toggle('is-on', on);
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-  }
-
-  /* put a crest on the can — the roll drives the product shot */
-  var crestLayer = document.getElementById('crestLayer');
-  var canShot = document.querySelector('.canshot');
-  if (canShot){
-    var markReady = function(){ canShot.closest('.canframe').classList.add('ready'); };
-    if (canShot.complete && canShot.naturalWidth) markReady(); else canShot.addEventListener('load', markReady);
-  }
+  /* put a crest on the can — the hero can and the proof can share one crest */
+  var crestLayers = Array.prototype.slice.call(document.querySelectorAll('.crestlayer'));
+  Array.prototype.forEach.call(document.querySelectorAll('.canshot'), function(shot){
+    var markReady = function(){ shot.closest('.canframe').classList.add('ready'); };
+    if (shot.complete && shot.naturalWidth) markReady(); else shot.addEventListener('load', markReady);
+  });
   var proofCap = document.getElementById('proofCap');
   var prows = Array.prototype.slice.call(document.querySelectorAll('.prow'));
-  var banner = document.getElementById('clubBanner');
-  var nameEl = document.getElementById('cycleName');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var CLUBS = [
-    {k:'oak',     n:'Oakhaven Country Club'},
-    {k:'willow',  n:'Willow Creek Golf Club'},
-    {k:'racquet', n:'Stone Ridge Racquet Club'},
-    {k:'book',    n:'The Foxglove Book Society'},
-    {k:'mahjong', n:'The Jade Table Club'},
-    {k:'quail',   n:'Lakeside Hunt Club'}
+    {k:'oak',     n:'Elder Oak Country Club'},
+    {k:'willow',  n:'Willowfield Country Club'},
+    {k:'racquet', n:'Summit Hollow Country Club'},
+    {k:'quail',   n:'Covey Lake Country Club'}
   ];
   function idxOf(key){ for (var i=0;i<CLUBS.length;i++){ if (CLUBS[i].k===key) return i; } return -1; }
 
   /* warm every disc so a swap never shows an empty well */
-  railBtns.concat(prows).forEach(function(btn){
+  prows.forEach(function(btn){
     var im = new Image(); im.src = 'disc-' + btn.getAttribute('data-crest') + '.webp';
   });
 
   var current = 'oak';
 
   function paintCan(key, cap){
-    if (!crestLayer) return;
+    if (!crestLayers.length) return;
     var next = new Image();
     next.onload = function(){
-      crestLayer.src = next.src;
-      if (!reduce){
-        crestLayer.style.animation = 'none';
-        void crestLayer.offsetWidth;
-        crestLayer.style.animation = '';
-      }
+      crestLayers.forEach(function(layer){
+        layer.src = next.src;
+        if (!reduce){
+          layer.style.animation = 'none';
+          void layer.offsetWidth;
+          layer.style.animation = '';
+        }
+      });
       if (proofCap) proofCap.textContent = key === 'yours'
         ? 'Your crest here, on exactly the same wine.'
         : cap;
@@ -1504,62 +1430,27 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     next.src = 'disc-' + key + '.webp';
   }
 
-  var mhDisc = document.getElementById('mhDisc');
   var mhName = document.getElementById('mhName');
   var mhStage = document.getElementById('mhStage');
-  function paintMast(key, cap){
+  function paintName(key, cap){
+    if (!mhName) return;
     var label = key === 'yours' ? 'Your club' : cap;
-    if (mhName){
-      mhName.style.opacity = 0;
-      setTimeout(function(){ mhName.textContent = label; mhName.style.opacity = 1; }, 210);
-    }
-    if (!mhDisc) return;
-    var im = new Image();
-    im.onload = function(){
-      mhDisc.src = im.src;
-      if (!reduce){
-        mhDisc.style.animation = 'none';
-        void mhDisc.offsetWidth;
-        mhDisc.style.animation = '';
-      }
-    };
-    im.src = 'disc-' + key + '.webp';
-  }
-
-  function paintBanner(key, cap){
-    if (!nameEl) return;
-    var label = key === 'yours' ? 'Your club' : cap;
-    nameEl.style.opacity = 0;
-    setTimeout(function(){
-      nameEl.textContent = label;
-      nameEl.style.opacity = 1;
-      if (banner) banner.setAttribute('aria-label',
-        'A club banner reading: canned exclusively for ' + label + '. Press Enter for the next club.');
-    }, 260);
+    mhName.style.opacity = 0;
+    setTimeout(function(){ mhName.textContent = label; mhName.style.opacity = 1; }, 210);
   }
 
   /* one club at a time, everywhere on the page */
-  function setClub(key, cap, opts){
+  function setClub(key, cap){
     if (key === current) return;
     current = key;
-    opts = opts || {};
-    railSync(key);
     prows.forEach(function(o){
       var on = o.getAttribute('data-crest') === key;
       o.classList.toggle('is-on', on);
       o.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    paintMast(key, cap);
-    if (!opts.skipCan) paintCan(key, cap);
-    if (!opts.skipBanner) paintBanner(key, cap);
+    paintName(key, cap);
+    paintCan(key, cap);
   }
-
-  railBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      setClub(btn.getAttribute('data-crest'), btn.getAttribute('data-cap'));
-      stopCycle();
-    });
-  });
 
   if (mhStage){
     mhStage.addEventListener('click', function(){ nextClub(); stopCycle(); });
@@ -1572,7 +1463,7 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     });
   });
 
-  /* the banner names a different club every few seconds */
+  /* the hero can wears a different crest every few seconds */
   var bPaused = false, bVisible = true, bTimer = null, shown = 0;
   function stopCycle(){ if (bTimer){ clearInterval(bTimer); bTimer = null; } }
   function nextClub(){
