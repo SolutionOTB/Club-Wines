@@ -1437,10 +1437,15 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
   ];
   function idxOf(key){ for (var i=0;i<CLUBS.length;i++){ if (CLUBS[i].k===key) return i; } return -1; }
 
-  /* warm every disc so a swap never shows an empty well */
+  /* each club wears its own can colour: the same studio shot, recoloured */
+  var CAN_COLOUR = {oak:'can-blank.jpg', willow:'can-navy.jpg', racquet:'can-burgundy.jpg', quail:'can-navy.jpg', yours:'can-blank.jpg'};
+  var canShots = Array.prototype.slice.call(document.querySelectorAll('.canshot'));
+
+  /* warm every disc and can so a swap never shows an empty well */
   prows.forEach(function(btn){
     var im = new Image(); im.src = 'disc-' + btn.getAttribute('data-crest') + '.webp';
   });
+  ['can-navy.jpg','can-burgundy.jpg'].forEach(function(src){ var im = new Image(); im.src = src; });
 
   var current = 'oak';
 
@@ -1448,6 +1453,10 @@ footer .colophon .legalnav span{color:rgba(247,243,235,.74);padding:0 6px}
     if (!crestLayers.length) return;
     var next = new Image();
     next.onload = function(){
+      var can = CAN_COLOUR[key] || 'can-blank.jpg';
+      canShots.forEach(function(shot){
+        if (shot.getAttribute('src') !== can) shot.src = can;
+      });
       crestLayers.forEach(function(layer){
         layer.src = next.src;
         if (!reduce){
